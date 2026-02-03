@@ -156,6 +156,10 @@
             padding: 8px;
             border-radius: 4px;
             transition: all 0.3s;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
         }
 
         .nav-toggle:hover {
@@ -1068,6 +1072,189 @@
             font-size: 0.9rem;
         }
 
+        /* МОБИЛЬНАЯ ШАПКА - ОПТИМИЗИРОВАННАЯ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ */
+        @media (max-width: 768px) {
+            /* Компактная шапка */
+            .header-container {
+                padding: 0 8px;
+            }
+            
+            /* Еще компактнее логотип */
+            .logo {
+                font-size: 1rem;
+                height: 36px;
+                min-width: auto;
+                max-width: 100px;
+            }
+            
+            .logo i {
+                font-size: 1.1rem;
+                margin-right: 4px;
+            }
+            
+            .logo-text {
+                font-size: 0.7rem;
+                letter-spacing: 0.2px;
+                line-height: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            
+            /* Ультракомпактная навигация */
+            nav ul {
+                gap: 2px;
+                margin-left: 2px;
+            }
+            
+            nav ul li a {
+                font-size: 0.65rem;
+                padding: 4px 5px;
+                height: 32px;
+                min-width: 50px;
+                max-width: 60px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                line-height: 1.1;
+                font-weight: 500;
+                letter-spacing: -0.2px;
+            }
+            
+            nav ul li a.price-btn {
+                font-size: 0.65rem;
+                padding: 4px 5px;
+                min-width: 52px;
+                max-width: 52px;
+            }
+            
+            /* Убираем иконки внутри ссылок если они есть */
+            nav ul li a i {
+                display: none;
+            }
+        }
+
+        /* ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ (iPhone 5/SE) */
+        @media (max-width: 360px) {
+            .header-container {
+                padding: 0 5px;
+            }
+            
+            .logo {
+                font-size: 0.9rem;
+                height: 34px;
+                max-width: 80px;
+            }
+            
+            .logo i {
+                font-size: 1rem;
+                margin-right: 3px;
+            }
+            
+            .logo-text {
+                font-size: 0.6rem;
+            }
+            
+            /* Еще компактнее */
+            nav ul {
+                gap: 1px;
+            }
+            
+            nav ul li a {
+                font-size: 0.6rem;
+                padding: 3px 4px;
+                height: 30px;
+                min-width: 48px;
+                max-width: 48px;
+            }
+            
+            nav ul li a.price-btn {
+                font-size: 0.6rem;
+                padding: 3px 4px;
+                min-width: 50px;
+                max-width: 50px;
+            }
+        }
+
+        /* БУРГЕР-МЕНЮ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ */
+        @media (max-width: 320px) {
+            /* Кнопка бургер-меню */
+            .nav-toggle {
+                display: flex;
+                margin-left: 10px;
+            }
+            
+            /* Прячем обычное меню */
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+                z-index: 1000;
+                border-bottom: 1px solid rgba(255, 71, 87, 0.3);
+                gap: 5px;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                width: 100%;
+                margin: 2px 0;
+            }
+            
+            nav ul li a {
+                width: 100%;
+                max-width: 100%;
+                height: 40px;
+                font-size: 0.85rem;
+                justify-content: flex-start;
+                padding: 0 15px;
+                min-width: auto;
+            }
+            
+            /* Адаптируем контейнер под бургер */
+            .header-container {
+                justify-content: space-between;
+            }
+        }
+
+        /* ГОРИЗОНТАЛЬНАЯ ОРИЕНТАЦИЯ НА МОБИЛЬНЫХ */
+        @media (max-width: 768px) and (orientation: landscape) {
+            header {
+                height: 50px;
+            }
+            
+            body {
+                padding-top: 50px;
+            }
+            
+            .logo {
+                height: 35px;
+            }
+            
+            nav ul li a {
+                height: 30px;
+                font-size: 0.7rem;
+                padding: 4px 6px;
+            }
+            
+            nav ul li a.price-btn {
+                font-size: 0.7rem;
+                padding: 4px 6px;
+            }
+        }
+
         /* ОПТИМИЗАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
         @media (max-width: 992px) {
             body {
@@ -1089,24 +1276,6 @@
             .master-section {
                 padding: 30px;
             }
-            
-            /* Адаптивная навигация */
-            .logo {
-                font-size: 1.2rem;
-            }
-            
-            .logo i {
-                font-size: 1.3rem;
-            }
-            
-            .logo-text {
-                font-size: 0.85rem;
-            }
-            
-            nav ul li a {
-                font-size: 0.75rem;
-                padding: 6px 8px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1117,46 +1286,6 @@
             header {
                 height: 60px;
                 padding: 8px 0;
-            }
-            
-            .header-container {
-                padding: 0 12px;
-            }
-            
-            /* Логотип для мобильных */
-            .logo {
-                font-size: 1.1rem;
-                height: 36px;
-            }
-            
-            .logo i {
-                font-size: 1.2rem;
-                margin-right: 6px;
-            }
-            
-            .logo-text {
-                font-size: 0.8rem;
-                letter-spacing: 0.3px;
-            }
-            
-            /* Компактная навигация */
-            nav ul {
-                gap: 4px;
-            }
-            
-            nav ul li a {
-                font-size: 0.7rem;
-                padding: 5px 6px;
-                height: 34px;
-                font-weight: 500;
-                border-radius: 5px;
-            }
-            
-            /* Специальный стиль для Price на мобильных */
-            nav ul li a.price-btn {
-                padding: 5px 8px;
-                font-size: 0.7rem;
-                font-weight: 600;
             }
             
             .hero {
@@ -1431,37 +1560,6 @@
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 1rem;
-            }
-            
-            .logo i {
-                font-size: 1.1rem;
-                margin-right: 5px;
-            }
-            
-            .logo-text {
-                font-size: 0.75rem;
-                letter-spacing: 0.2px;
-            }
-            
-            /* Еще более компактная навигация */
-            nav ul {
-                gap: 3px;
-            }
-            
-            nav ul li a {
-                font-size: 0.65rem;
-                padding: 4px 5px;
-                height: 32px;
-                border-radius: 4px;
-            }
-            
-            nav ul li a.price-btn {
-                font-size: 0.65rem;
-                padding: 4px 6px;
-            }
-            
             .hero h1 {
                 font-size: 1.6rem;
             }
@@ -1500,57 +1598,6 @@
             }
         }
 
-        @media (max-width: 360px) {
-            .logo {
-                font-size: 0.9rem;
-            }
-            
-            .logo i {
-                font-size: 1rem;
-            }
-            
-            .logo-text {
-                font-size: 0.7rem;
-            }
-            
-            /* Минимальная навигация для очень маленьких экранов */
-            nav ul {
-                gap: 2px;
-            }
-            
-            nav ul li a {
-                font-size: 0.6rem;
-                padding: 3px 4px;
-                height: 30px;
-            }
-            
-            nav ul li a.price-btn {
-                font-size: 0.6rem;
-                padding: 3px 5px;
-            }
-            
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-            }
-            
-            .btn-main {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
-            .work-hours-item-compact {
-                min-width: 100%;
-            }
-        }
-
         @media (max-height: 600px) and (orientation: landscape) {
             .hero {
                 min-height: calc(100vh - 60px);
@@ -1573,12 +1620,6 @@
             
             .logo {
                 height: 35px;
-            }
-            
-            nav ul li a {
-                height: 30px;
-                font-size: 0.7rem;
-                padding: 4px 6px;
             }
         }
 
@@ -1713,8 +1754,14 @@
                 <i class="fas fa-laptop-code" aria-hidden="true"></i>
                 <span class="logo-text">MSK REPAIR PC</span>
             </a>
+            
+            <!-- Кнопка бургер-меню для мобильных -->
+            <button class="nav-toggle" id="navToggle" aria-label="Меню" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            
             <nav>
-                <ul>
+                <ul id="navMenu">
                     <li><a href="#why-us">Почему нам доверяют</a></li>
                     <li><a href="#master">О мастере</a></li>
                     <li><a href="#reviews">Отзывы</a></li>
@@ -2271,7 +2318,57 @@
         
         // Подсветка активной ссылки в навигации
         highlightActiveNavLink();
+        
+        // Настройка бургер-меню
+        setupBurgerMenu();
     });
+
+    // Настройка бургер-меню
+    function setupBurgerMenu() {
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('show');
+                const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', !isExpanded);
+                
+                // Меняем иконку
+                const icon = navToggle.querySelector('i');
+                if (navMenu.classList.contains('show')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Закрытие меню при клике на ссылку
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Закрытие меню при клике вне его
+            document.addEventListener('click', function(event) {
+                if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('show');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+    }
 
     // Подсветка активной ссылки в навигации
     function highlightActiveNavLink() {
