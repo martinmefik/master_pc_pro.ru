@@ -365,7 +365,7 @@
             border-radius: 2px;
         }
 
-        /* Раздел "Почему нам стоит выбрать и довериться" */
+        /* Раздел "Почему нас стоит выбрать и довериться" */
         .why-us {
             background-color: rgba(20, 20, 20, 0.95);
         }
@@ -1660,7 +1660,7 @@
             </div>
         </section>
 
-        <!-- Раздел "Почему нам стоит выбрать и довериться" -->
+        <!-- Раздел "Почему нас стоит выбрать и довериться" -->
         <section id="why-us" class="why-us fade-in">
             <h2 class="section-title">Почему нас стоит выбрать и довериться</h2>
             <div class="reasons">
@@ -1801,7 +1801,7 @@
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Сергей</h4>
-                            <p>Клиент с сентбря 2025</p>
+                            <p>Клиент с января 2025</p>
                         </div>
                     </div>
                 </div>
@@ -1810,7 +1810,7 @@
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Мария</h4>
-                            <p>Клиент с июня 2025</p>
+                            <p>Клиент с марта 2025</p>
                         </div>
                     </div>
                 </div>
@@ -1819,7 +1819,7 @@
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Дмитрий</h4>
-                            <p>Клиент с июня 2025</p>
+                            <p>Клиент с февраля 2025</p>
                         </div>
                     </div>
                 </div>
@@ -1828,7 +1828,7 @@
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Александр</h4>
-                            <p>Клиент с марта 2025</p>
+                            <p>Клиент с декабря 2024</p>
                         </div>
                     </div>
                 </div>
@@ -1837,7 +1837,7 @@
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Ольга</h4>
-                            <p>Клиент с января 2025</p>
+                            <p>Клиент с ноября 2024</p>
                         </div>
                     </div>
                 </div>
@@ -2137,6 +2137,7 @@
             <button class="admin-tab active" data-tab="active">Активные заявки</button>
             <button class="admin-tab" data-tab="archive">Архив</button>
             <button class="admin-tab" data-tab="export">Экспорт</button>
+            <button class="admin-tab" data-tab="telegram">Telegram</button>
         </div>
         
         <!-- Контент активных заявок -->
@@ -2198,7 +2199,7 @@
                             </tr>
                         </thead>
                         <tbody id="adminArchiveTable">
-                            <!-- Архивные заявки будут загружаться здесь -->
+                            <!-- Архивные заявки будут загрузки здесь -->
                         </tbody>
                     </table>
                 </div>
@@ -2232,14 +2233,57 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Контент Telegram -->
+        <div id="telegramTab" class="admin-tab-content">
+            <div class="admin-content">
+                <div class="admin-table-container">
+                    <div class="work-hours" style="margin: 0 0 15px 0; padding: 15px;">
+                        <h3 style="margin-bottom: 12px; font-size: 1.2rem;">Управление Telegram ботом</h3>
+                        <p style="color: var(--light); margin-bottom: 15px;">Настройки и тестирование Telegram уведомлений</p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div class="form-group">
+                                <label for="telegramToken">Telegram Bot Token</label>
+                                <input type="text" id="telegramToken" class="form-control" value="8400236799:AAGX1M-rA4dbjvSsVxzxpt59vOtM_LpABV8">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="telegramChatId">Telegram Chat ID</label>
+                                <input type="text" id="telegramChatId" class="form-control" value="1070056420">
+                                <p style="color: var(--gray); font-size: 0.8rem; margin-top: 5px;">
+                                    ID можно получить через бота @userinfobot
+                                </p>
+                            </div>
+                            
+                            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                                <button id="saveTelegramSettings" class="btn-main" style="padding: 10px 20px; min-height: 44px;">
+                                    <i class="fas fa-save"></i> Сохранить настройки
+                                </button>
+                                <button id="testTelegramBtn" class="btn-main" style="background: #3498db; padding: 10px 20px; min-height: 44px;">
+                                    <i class="fas fa-paper-plane"></i> Тест Telegram
+                                </button>
+                                <button id="checkBotStatus" class="btn-main" style="background: #2ed573; padding: 10px 20px; min-height: 44px;">
+                                    <i class="fas fa-check-circle"></i> Проверить бота
+                                </button>
+                            </div>
+                            
+                            <div id="telegramStatus" style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; display: none;">
+                                <!-- Статус Telegram -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 <script>
-    // Конфигурация Telegram бота - ОБНОВЛЕННЫЕ ДАННЫЕ
-    const TELEGRAM_BOT_TOKEN = '8400236799:AAGX1M-rA4dbjvSsVxzxpt59vOtM_LpABV8';
-    const TELEGRAM_CHAT_ID = '1070056420';
+    // Конфигурация Telegram бота
+    let TELEGRAM_BOT_TOKEN = '8400236799:AAGX1M-rA4dbjvSsVxzxpt59vOtM_LpABV8';
+    let TELEGRAM_CHAT_ID = '1070056420';
     
     // Пароль для доступа к админ панели
     const ADMIN_PASSWORD = 'Andrey198765!';
@@ -2255,6 +2299,9 @@
 
     // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
+        // Загружаем сохраненные настройки Telegram
+        loadTelegramSettings();
+        
         // Инициализация анимаций появления при скролле
         initScrollAnimations();
         
@@ -2276,9 +2323,105 @@
         // Настройка окна с ценами
         setupPriceModal();
         
+        // Настройка Telegram панели
+        setupTelegramPanel();
+        
         // Загрузка тестовых данных (если нет своих)
         loadSampleDataIfEmpty();
     });
+
+    // Загрузка настроек Telegram
+    function loadTelegramSettings() {
+        try {
+            const savedToken = localStorage.getItem('mskrepair_telegram_token');
+            const savedChatId = localStorage.getItem('mskrepair_telegram_chat_id');
+            
+            if (savedToken) TELEGRAM_BOT_TOKEN = savedToken;
+            if (savedChatId) TELEGRAM_CHAT_ID = savedChatId;
+            
+            // Обновляем поля в админ панели
+            const tokenField = document.getElementById('telegramToken');
+            const chatIdField = document.getElementById('telegramChatId');
+            
+            if (tokenField) tokenField.value = TELEGRAM_BOT_TOKEN;
+            if (chatIdField) chatIdField.value = TELEGRAM_CHAT_ID;
+            
+        } catch (error) {
+            console.error('Ошибка загрузки настроек Telegram:', error);
+        }
+    }
+
+    // Сохранение настроек Telegram
+    function saveTelegramSettings() {
+        try {
+            const tokenField = document.getElementById('telegramToken');
+            const chatIdField = document.getElementById('telegramChatId');
+            
+            if (tokenField && chatIdField) {
+                TELEGRAM_BOT_TOKEN = tokenField.value.trim();
+                TELEGRAM_CHAT_ID = chatIdField.value.trim();
+                
+                localStorage.setItem('mskrepair_telegram_token', TELEGRAM_BOT_TOKEN);
+                localStorage.setItem('mskrepair_telegram_chat_id', TELEGRAM_CHAT_ID);
+                
+                showTelegramStatus('Настройки Telegram сохранены успешно!', 'success');
+                return true;
+            }
+        } catch (error) {
+            console.error('Ошибка сохранения настроек Telegram:', error);
+            showTelegramStatus('Ошибка сохранения настроек: ' + error.message, 'error');
+        }
+        return false;
+    }
+
+    // Настройка Telegram панели
+    function setupTelegramPanel() {
+        // Кнопка сохранения настроек
+        const saveTelegramBtn = document.getElementById('saveTelegramSettings');
+        if (saveTelegramBtn) {
+            saveTelegramBtn.addEventListener('click', function() {
+                saveTelegramSettings();
+            });
+        }
+        
+        // Кнопка тестирования Telegram
+        const testTelegramBtn = document.getElementById('testTelegramBtn');
+        if (testTelegramBtn) {
+            testTelegramBtn.addEventListener('click', function() {
+                testTelegramBot();
+            });
+        }
+        
+        // Кнопка проверки статуса бота
+        const checkBotStatusBtn = document.getElementById('checkBotStatus');
+        if (checkBotStatusBtn) {
+            checkBotStatusBtn.addEventListener('click', function() {
+                checkBotStatus();
+            });
+        }
+    }
+
+    // Показать статус Telegram
+    function showTelegramStatus(message, type) {
+        const statusDiv = document.getElementById('telegramStatus');
+        if (!statusDiv) return;
+        
+        statusDiv.style.display = 'block';
+        statusDiv.style.color = type === 'success' ? '#2ed573' : 
+                               type === 'error' ? '#ff4757' : 
+                               type === 'warning' ? '#ffa502' : 
+                               '#3498db';
+        statusDiv.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <div>${message}</div>
+            </div>
+        `;
+        
+        setTimeout(() => {
+            statusDiv.style.display = 'none';
+        }, 5000);
+    }
 
     // Инициализация календаря
     function initDatePicker() {
@@ -2375,7 +2518,7 @@
                 device: document.getElementById('deviceType').value,
                 problem: document.getElementById('problemDescription').value.trim(),
                 appointmentDate: selectedDate,
-                date: new Date().toLocaleDateString('ru-RU'), // Только дата, без времени
+                date: new Date().toLocaleDateString('ru-RU'),
                 status: 'new',
                 timestamp: Date.now()
             };
@@ -2399,11 +2542,18 @@
             
             // Сохраняем заявку
             if (saveRequest(requestData)) {
+                // ОТПРАВЛЯЕМ В TELEGRAM ПЕРВЫМ ДЕЛОМ
+                console.log('Начинаем отправку заявки в Telegram...');
+                const telegramSent = sendTelegramNotification(requestData);
+                
+                if (telegramSent) {
+                    console.log('✅ Заявка отправлена в Telegram');
+                } else {
+                    console.warn('⚠️ Заявка сохранена, но не отправлена в Telegram');
+                }
+                
                 // Показываем успешное сообщение
                 showSuccessMessage(requestData);
-                
-                // Отправляем уведомление в Telegram с кнопками управления
-                sendTelegramNotification(requestData);
                 
                 // Очищаем форму
                 form.reset();
@@ -2472,7 +2622,7 @@
             }
             
             localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
-            console.log('Заявка сохранена:', requestData);
+            console.log('Заявка сохранена в LocalStorage:', requestData);
             
             // Обновляем админ панель, если она открыта
             if (document.getElementById('adminPanel').classList.contains('active')) {
@@ -2514,6 +2664,9 @@
                 <p><strong>Телефон:</strong> ${requestData.phone}</p>
                 <p><strong>Устройство:</strong> ${requestData.device}</p>
                 <p><strong>Дата создания:</strong> ${requestData.date}</p>
+                <div class="warning-text" style="margin-top: 15px;">
+                    <i class="fas fa-info-circle"></i> Уведомление отправлено мастеру в Telegram
+                </div>
             `;
         }
         
@@ -2521,24 +2674,30 @@
         modal.classList.add('active');
     }
 
-    // Отправка уведомления в Telegram с кнопками управления
+    // Основная функция отправки уведомления в Telegram
     function sendTelegramNotification(requestData) {
         if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
-            console.log('Telegram уведомления не настроены');
-            return;
+            console.error('❌ Telegram бот не настроен. Проверьте TELEGRAM_BOT_TOKEN и TELEGRAM_CHAT_ID');
+            showTelegramStatus('Telegram бот не настроен. Проверьте настройки в админ панели.', 'error');
+            return false;
         }
         
-        const message = `📱 НОВАЯ ЗАЯВКА MSK REPAIR PC
+        console.log('🔄 Отправка заявки в Telegram...');
+        console.log('Chat ID:', TELEGRAM_CHAT_ID);
+        console.log('Данные заявки:', requestData);
+        
+        // Форматируем сообщение
+        const message = `📱 *НОВАЯ ЗАЯВКА MSK REPAIR PC* 🚀
 
-🆔 Номер: ${requestData.id}
-👤 Имя: ${requestData.name}
-📞 Телефон: ${requestData.phone}
-📍 Адрес: ${requestData.address}
-💻 Устройство: ${requestData.device}
-📅 Дата записи: ${requestData.appointmentDate}
-📝 Проблема: ${requestData.problem.substring(0, 300)}
-📅 Дата создания: ${new Date().toLocaleDateString('ru-RU')}
-🔘 Статус: Новая`;
+🆔 *Номер заявки:* ${requestData.id}
+👤 *Имя клиента:* ${requestData.name}
+📞 *Телефон:* \`${requestData.phone}\`
+📍 *Адрес:* ${requestData.address}
+💻 *Устройство:* ${requestData.device}
+📅 *Дата записи:* ${requestData.appointmentDate}
+📝 *Проблема:* ${requestData.problem.substring(0, 300)}${requestData.problem.length > 300 ? '...' : ''}
+📅 *Дата создания:* ${new Date().toLocaleDateString('ru-RU')}
+🔘 *Статус:* Новая ⏳`;
 
         // Создаем inline клавиатуру с кнопками управления
         const keyboard = {
@@ -2559,7 +2718,81 @@
         
         const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
         
-        fetch(url, {
+        // Пробуем отправить с Markdown
+        return fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: message,
+                parse_mode: 'Markdown',
+                reply_markup: keyboard
+            })
+        })
+        .then(response => {
+            console.log('📡 Ответ от Telegram API:', response.status);
+            return response.json();
+        })
+        .then(data => {
+            if (data.ok) {
+                console.log('✅ Уведомление в Telegram успешно отправлено!');
+                console.log('Message ID:', data.result.message_id);
+                saveMessageId(requestData.id, data.result.message_id);
+                return true;
+            } else {
+                console.error('❌ Ошибка отправки в Telegram:', data);
+                
+                // Пробуем отправить без Markdown, если он вызывает ошибку
+                if (data.description && (data.description.includes('Markdown') || data.description.includes('parse'))) {
+                    console.log('🔄 Пробуем отправить без Markdown форматирования...');
+                    return sendTelegramPlainText(requestData);
+                }
+                
+                // Показываем ошибку пользователю
+                showTelegramStatus(`Ошибка Telegram: ${data.description || 'Неизвестная ошибка'}`, 'error');
+                return false;
+            }
+        })
+        .catch(error => {
+            console.error('❌ Ошибка сети при отправке в Telegram:', error);
+            showTelegramStatus(`Ошибка сети: ${error.message}`, 'error');
+            return false;
+        });
+    }
+
+    // Альтернативная функция для отправки простого текста (без Markdown)
+    function sendTelegramPlainText(requestData) {
+        const message = `📱 НОВАЯ ЗАЯВКА MSK REPAIR PC
+
+🆔 Номер: ${requestData.id}
+👤 Имя: ${requestData.name}
+📞 Телефон: ${requestData.phone}
+📍 Адрес: ${requestData.address}
+💻 Устройство: ${requestData.device}
+📅 Дата записи: ${requestData.appointmentDate}
+📝 Проблема: ${requestData.problem.substring(0, 300)}${requestData.problem.length > 300 ? '...' : ''}
+📅 Дата создания: ${new Date().toLocaleDateString('ru-RU')}
+🔘 Статус: Новая`;
+
+        const keyboard = {
+            inline_keyboard: [
+                [
+                    { text: "🔄 В работу", callback_data: `status_in_progress_${requestData.id}` },
+                    { text: "📞 Позвонить", url: `tel:${requestData.phone}` }
+                ],
+                [
+                    { text: "📅 Перенести", callback_data: `status_reschedule_${requestData.id}` },
+                    { text: "✅ Завершить", callback_data: `status_completed_${requestData.id}` }
+                ],
+                [
+                    { text: "❌ Отменить", callback_data: `status_cancelled_${requestData.id}` }
+                ]
+            ]
+        };
+        
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        
+        return fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -2572,15 +2805,86 @@
         .then(response => response.json())
         .then(data => {
             if (data.ok) {
-                console.log('Уведомление в Telegram отправлено с кнопками управления');
-                // Сохраняем ID сообщения для дальнейшего обновления
+                console.log('✅ Уведомление в Telegram отправлено (plain text)');
                 saveMessageId(requestData.id, data.result.message_id);
+                return true;
             } else {
-                console.error('Ошибка отправки в Telegram:', data);
+                console.error('❌ Ошибка отправки в Telegram (plain text):', data);
+                return false;
             }
         })
         .catch(error => {
-            console.error('Ошибка сети при отправке в Telegram:', error);
+            console.error('❌ Ошибка сети:', error);
+            return false;
+        });
+    }
+
+    // Функция для тестирования Telegram бота
+    function testTelegramBot() {
+        if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+            showTelegramStatus('❌ Telegram бот не настроен. Заполните настройки выше.', 'error');
+            return;
+        }
+        
+        showTelegramStatus('🔄 Тестирование подключения к Telegram боту...', 'warning');
+        
+        const testMessage = `✅ Тестовое сообщение от MSK REPAIR PC
+📅 Дата: ${new Date().toLocaleString('ru-RU')}
+🕒 Время: ${new Date().toLocaleTimeString('ru-RU')}
+📱 Система работает исправно!`;
+
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: TELEGRAM_CHAT_ID,
+                text: testMessage,
+                parse_mode: 'HTML'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                showTelegramStatus('✅ Тестовое сообщение успешно отправлено! Бот работает корректно.', 'success');
+                console.log('✅ Тест Telegram: успешно', data);
+            } else {
+                showTelegramStatus(`❌ Ошибка: ${data.description || 'Неизвестная ошибка'}`, 'error');
+                console.error('❌ Тест Telegram: ошибка', data);
+            }
+        })
+        .catch(error => {
+            showTelegramStatus(`❌ Ошибка сети: ${error.message}`, 'error');
+            console.error('❌ Тест Telegram: ошибка сети', error);
+        });
+    }
+
+    // Функция проверки статуса бота
+    function checkBotStatus() {
+        if (!TELEGRAM_BOT_TOKEN) {
+            showTelegramStatus('❌ Введите Telegram Bot Token', 'error');
+            return;
+        }
+        
+        showTelegramStatus('🔄 Проверка статуса бота...', 'warning');
+        
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe`;
+        
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                showTelegramStatus(`✅ Бот активен: ${data.result.first_name} (@${data.result.username})`, 'success');
+                console.log('✅ Статус бота:', data.result);
+            } else {
+                showTelegramStatus(`❌ Бот не доступен: ${data.description || 'Неизвестная ошибка'}`, 'error');
+                console.error('❌ Статус бота: ошибка', data);
+            }
+        })
+        .catch(error => {
+            showTelegramStatus(`❌ Ошибка сети: ${error.message}`, 'error');
+            console.error('❌ Статус бота: ошибка сети', error);
         });
     }
 
@@ -2603,23 +2907,24 @@
             const messageIds = JSON.parse(localStorage.getItem('mskrepair_message_ids') || '{}');
             const messageId = messageIds[requestData.id];
             
-            if (!messageId) return;
+            if (!messageId) {
+                console.log('ID сообщения не найден для заявки:', requestData.id);
+                return;
+            }
             
             const statusText = newStatus === 'in_progress' ? '🔄 В работе' : 
                              newStatus === 'completed' ? '✅ Завершена' : 
                              newStatus === 'reschedule' ? '📅 Перенесена' :
                              '❌ Отменена';
             
-            const message = `📱 ОБНОВЛЕНИЕ СТАТУСА ЗАЯВКИ
+            const message = `📱 *ОБНОВЛЕНИЕ СТАТУСА ЗАЯВКИ*
 
-🆔 Номер: ${requestData.id}
-👤 Имя: ${requestData.name}
-📞 Телефон: ${requestData.phone}
-💻 Устройство: ${requestData.device}
-📅 Дата записи: ${requestData.appointmentDate}
-📝 Проблема: ${requestData.problem.substring(0, 200)}...
-📅 Дата обновления: ${new Date().toLocaleDateString('ru-RU')}
-🔘 Статус: ${statusText}`;
+🆔 *Номер:* ${requestData.id}
+👤 *Имя:* ${requestData.name}
+📞 *Телефон:* \`${requestData.phone}\`
+💻 *Устройство:* ${requestData.device}
+📅 *Дата обновления:* ${new Date().toLocaleDateString('ru-RU')}
+🔘 *Статус:* ${statusText}`;
             
             const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/editMessageText`;
             
@@ -2630,8 +2935,14 @@
                     chat_id: TELEGRAM_CHAT_ID,
                     message_id: messageId,
                     text: message,
-                    parse_mode: 'HTML'
+                    parse_mode: 'Markdown'
                 })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (!data.ok) {
+                    console.error('Ошибка обновления сообщения в Telegram:', data);
+                }
             })
             .catch(error => console.error('Ошибка обновления сообщения в Telegram:', error));
             
@@ -2698,6 +3009,9 @@
                     updateAdminPanel();
                 } else if (tabId === 'archive') {
                     updateArchivePanel();
+                } else if (tabId === 'telegram') {
+                    // Загружаем текущие настройки
+                    loadTelegramSettings();
                 }
             });
         });
@@ -2923,7 +3237,7 @@
         
         if (index !== -1) {
             requests[index].status = newStatus;
-            requests[index].date = new Date().toLocaleDateString('ru-RU'); // Только дата
+            requests[index].date = new Date().toLocaleDateString('ru-RU');
             localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
             updateAdminPanel();
             updateArchivePanel();
@@ -3183,62 +3497,6 @@
         const phoneRegex = /^(\+7|7|8)\d{10}$/;
         return phoneRegex.test(cleaned);
     }
-
-    // Функция для обработки callback от Telegram бота (пример для серверной части)
-    function handleTelegramCallback(callbackData) {
-        // Пример структуры callback_data: "status_in_progress_MSK-12345678"
-        const parts = callbackData.split('_');
-        const action = parts[0]; // "status"
-        const status = parts[1]; // "in_progress"
-        const requestId = parts.slice(2).join('_'); // "MSK-12345678"
-        
-        // Обновляем статус в локальном хранилище
-        let requests = loadRequests();
-        const requestIndex = requests.findIndex(r => r.id === requestId);
-        
-        if (requestIndex !== -1) {
-            requests[requestIndex].status = status;
-            localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
-            
-            // Обновляем интерфейс, если админ панель открыта
-            if (document.getElementById('adminPanel').classList.contains('active')) {
-                updateAdminPanel();
-                updateArchivePanel();
-            }
-            
-            // Отправляем ответное уведомление в Telegram
-            sendStatusUpdateToTelegram(requests[requestIndex], status);
-            
-            return true;
-        }
-        
-        return false;
-    }
-
-    // Функция для отправки обновления статуса в Telegram
-    function sendStatusUpdateToTelegram(requestData, newStatus) {
-        if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
-        
-        const statusText = newStatus === 'in_progress' ? 'в работу' :
-                         newStatus === 'completed' ? 'завершена' :
-                         newStatus === 'cancelled' ? 'отменена' :
-                         newStatus === 'reschedule' ? 'перенесена' : 'обновлена';
-        
-        const message = `Статус заявки ${requestData.id} изменен на: ${statusText}`;
-        
-        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        
-        fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                chat_id: TELEGRAM_CHAT_ID,
-                text: message,
-                parse_mode: 'HTML'
-            })
-        }).catch(error => console.error('Ошибка отправки обновления статуса:', error));
-    }
 </script>
 </body>
 </html>
-
