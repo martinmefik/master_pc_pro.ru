@@ -35,7 +35,7 @@
             overflow-x: hidden;
             line-height: 1.7;
             min-height: 100vh;
-            padding-top: 70px; /* Отступ для фиксированной шапки */
+            padding-top: 70px;
         }
 
         /* Параллакс эффект */
@@ -72,7 +72,7 @@
             z-index: 1;
         }
 
-        /* Шапка - статичная при скролле */
+        /* Шапка */
         header {
             background-color: rgba(0, 0, 0, 0.98);
             color: white;
@@ -212,95 +212,95 @@
             text-align: center;
         }
 
-        /* УЛУЧШЕННЫЙ и УМЕНЬШЕННЫЙ график работы */
+        /* СУПЕР КОМПАКТНЫЙ график работы */
         .work-hours {
             background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.95));
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
             max-width: 100%;
             overflow: hidden;
         }
 
         .work-hours h3 {
             color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .work-hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin: 15px 0;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
+        .work-hours-compact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px 0;
         }
 
-        .work-hours-item {
+        .work-hours-item-compact {
+            flex: 1;
+            min-width: 150px;
             text-align: center;
-            padding: 12px;
+            padding: 10px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            transition: all 0.3s;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary);
         }
 
-        .work-hours-item:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .work-hours-item i {
-            font-size: 1.5rem;
+        .work-hours-item-compact i {
+            font-size: 1.2rem;
             color: var(--secondary);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            display: block;
         }
 
-        .work-hours-item h4 {
+        .work-hours-item-compact h4 {
             color: var(--light);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
             font-weight: 600;
         }
 
-        .work-hours-item p {
+        .work-hours-item-compact p {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin: 0;
         }
 
         .warning-text {
             color: #ff6b81 !important;
             font-weight: 600;
-            margin: 12px 0;
-            padding: 10px;
+            margin: 10px 0;
+            padding: 8px;
             background: rgba(255, 107, 129, 0.1);
-            border-radius: 6px;
-            font-size: 0.9rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
             line-height: 1.4;
+        }
+
+        .warning-text i {
+            margin-right: 5px;
         }
 
         .guarantee-note {
             background: linear-gradient(135deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.1));
-            border-left: 4px solid var(--secondary);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 6px;
             text-align: left;
             border: 1px solid rgba(255, 71, 87, 0.2);
         }
 
         .guarantee-note p {
             color: var(--light);
-            margin: 8px 0;
-            font-size: 0.95rem;
+            margin: 6px 0;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
         }
@@ -308,13 +308,13 @@
         .guarantee-note p:before {
             content: '•';
             color: var(--secondary);
-            font-size: 1.2rem;
-            margin-right: 8px;
+            font-size: 1rem;
+            margin-right: 6px;
         }
 
         .guarantee-note strong {
             color: var(--secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* Основные разделы */
@@ -441,7 +441,7 @@
             font-weight: bold;
         }
 
-        /* УЛУЧШЕННЫЙ Раздел о мастере (упрощенный) */
+        /* Раздел о мастере */
         .master-section {
             background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(15, 15, 15, 0.95));
             border-radius: 16px;
@@ -502,7 +502,6 @@
             font-size: 1.1rem;
             color: var(--light);
             line-height: 1.6;
-            text-align: justify;
         }
 
         .master-highlights {
@@ -614,7 +613,6 @@
             color: var(--light);
             line-height: 1.7;
             font-size: 1rem;
-            text-align: justify;
         }
 
         .review-author {
@@ -925,7 +923,7 @@
             font-size: 0.9rem;
         }
 
-        /* Админ панель на полный экран (скрытая) */
+        /* Админ панель */
         .admin-panel {
             position: fixed;
             top: 0;
@@ -1227,9 +1225,6 @@
             .master-section {
                 padding: 30px;
             }
-            .work-hours {
-                padding: 18px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1271,11 +1266,6 @@
             .master-section {
                 padding: 25px 15px;
             }
-            .work-hours-grid {
-                grid-template-columns: 1fr;
-                padding: 12px;
-                gap: 10px;
-            }
             .master-highlights {
                 grid-template-columns: 1fr;
             }
@@ -1284,6 +1274,12 @@
             }
             .time-slots {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .work-hours-compact {
+                flex-direction: column;
+            }
+            .work-hours-item-compact {
+                min-width: 100%;
             }
         }
 
@@ -1298,13 +1294,17 @@
                 padding: 20px 15px;
             }
             .work-hours {
-                padding: 15px 12px;
+                padding: 12px 10px;
             }
             .work-hours h3 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .time-slots {
                 grid-template-columns: 1fr;
+            }
+            .btn-main {
+                padding: 12px 25px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -1345,47 +1345,46 @@
                 <p>Выезд на дом и удаленная помощь. Быстро, качественно, с гарантией!</p>
                 <button id="scrollToRequestBtn" class="btn-main" aria-label="Создать заявку на ремонт">Оставить заявку</button>
                 
-                <!-- УЛУЧШЕННЫЙ и УМЕНЬШЕННЫЙ График работы -->
+                <!-- СУПЕР КОМПАКТНЫЙ График работы -->
                 <div class="work-hours">
                     <h3><i class="fas fa-clock" aria-hidden="true"></i> График работы</h3>
                     
-                    <div class="work-hours-grid">
-                        <div class="work-hours-item">
-                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                            <h4>Понедельник - Пятница</h4>
+                    <div class="work-hours-compact">
+                        <div class="work-hours-item-compact">
+                            <i class="fas fa-calendar-week" aria-hidden="true"></i>
+                            <h4>Пн-Пт</h4>
                             <p>12:00 - 23:00</p>
                         </div>
-                        <div class="work-hours-item">
-                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                            <h4>Суббота - Воскресенье</h4>
+                        <div class="work-hours-item-compact">
+                            <i class="fas fa-calendar-weekend" aria-hidden="true"></i>
+                            <h4>Сб-Вс</h4>
                             <p>13:00 - 22:00</p>
                         </div>
-                        <div class="work-hours-item">
+                        <div class="work-hours-item-compact">
                             <i class="fas fa-car" aria-hidden="true"></i>
-                            <h4>Время выезда</h4>
-                            <p>30-40 минут</p>
+                            <h4>Выезд</h4>
+                            <p>30-40 мин</p>
                         </div>
-                        <div class="work-hours-item">
+                        <div class="work-hours-item-compact">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            <h4>Зона обслуживания</h4>
-                            <p>Только г. Москва</p>
+                            <h4>Зона</h4>
+                            <p>Только Москва</p>
                         </div>
                     </div>
                     
                     <p class="warning-text">
-                        <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Выезд мастера осуществляться на территории города Москва
+                        <i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Выезд мастера только по г. Москва
                     </p>
                     
                     <p class="warning-text">
-                        <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Для создания обращения из Московской области, звоните по телефону указанному в самом низу сайта
+                        <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Из Московской области звоните по телефону
                     </p>
                     
                     <div class="guarantee-note">
                         <p><strong>Гарантия на работу:</strong></p>
                         <p>На небольшую работу - до 14 дней</p>
-                        <p>На более серьезную работу - 30 дней</p>
+                        <p>На серьезную работу - 30 дней</p>
                         <p>Бесплатная консультация после ремонта</p>
-                        <p>Оригинальные комплектующие</p>
                     </div>
                 </div>
             </div>
@@ -1434,7 +1433,7 @@
             </div>
         </section>
 
-        <!-- УЛУЧШЕННЫЙ Раздел о мастере (упрощенный) -->
+        <!-- Раздел о мастере -->
         <section id="master" class="fade-in">
             <div class="master-section">
                 <div class="master">
@@ -1476,7 +1475,7 @@
             <h2 class="section-title">Отзывы клиентов</h2>
             <div class="review-slider">
                 <div class="review">
-                    <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение 40 минут, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 14 дней на работу. Отдельно хочу отметить вежливость и профессионализм - все объяснил, показал, дал рекомендации по эксплуатации.</p>
+                    <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение 40 минут, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 14 дней на работу.</p>
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Сергей Волков</h4>
@@ -1485,20 +1484,11 @@
                     </div>
                 </div>
                 <div class="review">
-                    <p>Работаю удаленно, и когда сломался ноутбук, это была катастрофа. Андрей помог удаленно за 40 минут - проблема была в вирусах и забитой системе. Не только все починил, но и настроил резервное копирование, показал, как избежать подобных проблем в будущем.</p>
+                    <p>Работаю удаленно, и когда сломался ноутбук, это была катастрофа. Андрей помог удаленно за 40 минут - проблема была в вирусах и забитой системе. Не только все починил, но и настроил резервное копирование.</p>
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Мария Соколова</h4>
                             <p>Клиент с марта 2025</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="review">
-                    <p>У меня сложилось самое лучшее впечатление от работы мастера. Компьютер начал сильно греться и выключаться. Андрей приехал, тщательно все проверил, почистил от пыли, заменил термопасту, настроил систему охлаждения. Работал аккуратно, на столе после него не осталось ни соринки.</p>
-                    <div class="review-author">
-                        <div class="review-author-info">
-                            <h4>Алексей Морозов</h4>
-                            <p>Клиент с февраля 2025</p>
                         </div>
                     </div>
                 </div>
@@ -1782,7 +1772,6 @@
         // Рассчитываем минимальную и максимальную дату
         const today = new Date();
         const minDate = new Date(today);
-        minDate.setDate(today.getDate()); // Сегодня
         
         const maxDate = new Date(today);
         maxDate.setDate(today.getDate() + 30); // 30 дней вперед
@@ -1865,6 +1854,14 @@
             }
         }
         
+        // Добавляем последний слот если нужно
+        if (dayOfWeek >= 1 && dayOfWeek <= 5 && timeSlotsInterval === 2) {
+            // Для Пн-Пт добавляем 23:00 если это последний интервал
+            if (workHours[workHours.length - 1] !== '23:00') {
+                workHours.push('23:00');
+            }
+        }
+        
         // Создаем кнопки для временных слотов
         workHours.forEach(time => {
             const timeSlot = document.createElement('button');
@@ -1872,13 +1869,12 @@
             timeSlot.textContent = time;
             timeSlot.dataset.time = time;
             timeSlot.type = 'button';
-            timeSlot.setAttribute('aria-label', `Выбрать время ${time}`);
             
             // Проверяем, занят ли слот
             if (isSlotBooked(selectedDate, time)) {
                 timeSlot.classList.add('booked');
                 timeSlot.disabled = true;
-                timeSlot.setAttribute('aria-label', `Время ${time} занято`);
+                timeSlot.title = 'Это время уже занято';
             } else {
                 timeSlot.addEventListener('click', function() {
                     selectTimeSlot(time);
@@ -1888,7 +1884,6 @@
             // Если это выбранный слот
             if (selectedTime === time) {
                 timeSlot.classList.add('selected');
-                timeSlot.setAttribute('aria-label', `Выбрано время ${time}`);
             }
             
             timeSlotsContainer.appendChild(timeSlot);
@@ -1902,7 +1897,7 @@
         
         // Если нет доступных слотов
         if (workHours.length === 0) {
-            timeSlotsContainer.innerHTML = '<p style="color: var(--gray); text-align: center; padding: 20px;">Нет доступных временных слотов на эту дату</p>';
+            timeSlotsContainer.innerHTML = '<p style="color: var(--gray); text-align: center; padding: 10px; font-size: 0.9rem;">Нет доступных временных слотов на эту дату</p>';
         }
     }
 
@@ -1911,15 +1906,12 @@
         // Снимаем выделение со всех слотов
         document.querySelectorAll('.time-slot').forEach(slot => {
             slot.classList.remove('selected');
-            slot.setAttribute('aria-label', slot.classList.contains('booked') ? 
-                `Время ${slot.dataset.time} занято` : `Выбрать время ${slot.dataset.time}`);
         });
         
         // Выделяем выбранный слот
         const selectedSlot = document.querySelector(`.time-slot[data-time="${time}"]`);
         if (selectedSlot && !selectedSlot.classList.contains('booked')) {
             selectedSlot.classList.add('selected');
-            selectedSlot.setAttribute('aria-label', `Выбрано время ${time}`);
             selectedTime = time;
             updateSelectedDateTimeDisplay();
         }
@@ -1937,7 +1929,6 @@
             selectedDateSpan.textContent = selectedDate;
             selectedTimeSpan.textContent = selectedTime;
             selectedDateTimeDiv.style.display = 'block';
-            selectedDateTimeDiv.setAttribute('aria-live', 'polite');
         } else {
             selectedDateTimeDiv.style.display = 'none';
         }
@@ -1976,12 +1967,10 @@
                 if (this.checked) {
                     addressField.value = 'Удаленная помощь';
                     addressField.disabled = true;
-                    addressField.placeholder = "Для удаленной помощи не требуется";
                     addressField.required = false;
                 } else {
                     addressField.value = '';
                     addressField.disabled = false;
-                    addressField.placeholder = "Улица, дом, квартира";
                     addressField.required = true;
                 }
             });
@@ -2026,6 +2015,11 @@
                 return;
             }
             
+            if (requestData.problem.length < 10) {
+                alert('Пожалуйста, подробнее опишите проблему (минимум 10 символов)');
+                return;
+            }
+            
             // Сохраняем заявку
             if (saveRequest(requestData)) {
                 // Показываем успешное сообщение
@@ -2049,6 +2043,9 @@
                 selectedTime = null;
                 updateSelectedDateTimeDisplay();
                 updateTimeSlots();
+                
+                // Прокручиваем к верху
+                window.scrollTo({top: 0, behavior: 'smooth'});
             } else {
                 alert('Ошибка сохранения заявки. Попробуйте еще раз.');
             }
@@ -2270,6 +2267,21 @@
                 document.getElementById('adminPanel').classList.remove('active');
             });
         }
+        
+        // Закрытие модального окна успеха
+        const closeSuccessBtn = document.getElementById('closeSuccess');
+        if (closeSuccessBtn) {
+            closeSuccessBtn.addEventListener('click', function() {
+                document.getElementById('successModal').classList.remove('active');
+            });
+        }
+        
+        const okSuccessBtn = document.getElementById('okSuccess');
+        if (okSuccessBtn) {
+            okSuccessBtn.addEventListener('click', function() {
+                document.getElementById('successModal').classList.remove('active');
+            });
+        }
     }
 
     // Показать админ панель
@@ -2306,9 +2318,13 @@
         requests.sort((a, b) => b.timestamp - a.timestamp);
         
         let html = '';
+        let activeCount = 0;
+        
         requests.forEach(request => {
             // Показываем только активные заявки (новые и в работе)
             if (request.status !== 'new' && request.status !== 'in_progress') return;
+            
+            activeCount++;
             
             const statusText = request.status === 'new' ? 'Новая' : 'В работе';
             const statusClass = request.status === 'new' ? 'status-new' : 'status-in-progress';
@@ -2333,12 +2349,13 @@
                       ''}
                     <button onclick="changeRequestStatus('${request.id}', 'cancelled')" 
                             class="btn-small" style="background:#ff4757;">Отменить</button>
-                    <button onclick="deleteRequest('${request.id}')" 
-                            class="btn-small" style="background:#333;">Удалить</button>
                 </td>
             </tr>
             `;
         });
+        
+        // Обновляем счетчик активных заявок
+        document.getElementById('totalRequests').textContent = activeCount;
         
         tableBody.innerHTML = html || `
             <tr>
@@ -2414,18 +2431,12 @@
             
             // Отправляем уведомление в Telegram об изменении статуса
             sendStatusTelegramNotification(requests[index], newStatus);
-        }
-    };
-
-    // Удаление заявки
-    window.deleteRequest = function(requestId) {
-        if (confirm('Удалить эту заявку?')) {
-            let requests = loadRequests();
-            requests = requests.filter(r => r.id !== requestId);
-            localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
-            updateAdminPanel();
-            updateArchivePanel();
-            loadBookedSlots();
+            
+            alert(`Статус заявки изменен на: ${
+                newStatus === 'completed' ? 'Завершена' : 
+                newStatus === 'cancelled' ? 'Отменена' : 
+                'В работе'
+            }`);
         }
     };
 
@@ -2542,21 +2553,6 @@
             });
         }
         
-        // Закрытие модальных окон
-        const closeSuccessBtn = document.getElementById('closeSuccess');
-        if (closeSuccessBtn) {
-            closeSuccessBtn.addEventListener('click', function() {
-                document.getElementById('successModal').classList.remove('active');
-            });
-        }
-        
-        const okSuccessBtn = document.getElementById('okSuccess');
-        if (okSuccessBtn) {
-            okSuccessBtn.addEventListener('click', function() {
-                document.getElementById('successModal').classList.remove('active');
-            });
-        }
-        
         // Плавная прокрутка к якорям
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -2659,19 +2655,6 @@
                     date: '15.03.2025, 14:30',
                     status: 'new',
                     timestamp: Date.now() - 86400000 * 2
-                },
-                {
-                    id: 'MSK-002',
-                    name: 'Мария Сидорова',
-                    phone: '+7 (987) 654-32-10',
-                    address: 'пр. Мира, д. 5, кв. 12',
-                    device: 'Компьютер',
-                    problem: 'Медленно работает, зависает при запуске программ',
-                    appointmentDate: tomorrowFormatted,
-                    appointmentTime: '16:00',
-                    date: '16.03.2025, 16:45',
-                    status: 'in_progress',
-                    timestamp: Date.now() - 86400000
                 }
             ];
             
