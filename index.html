@@ -6,6 +6,7 @@
     <meta name="description" content="Профессиональный ремонт компьютеров и ноутбуков в Москве. Выезд на дом и удаленная помощь. Быстро, качественно, с гарантией!">
     <title>MSK REPAIR PC | Ремонт компьютеров и ноутбуков в Москве</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
         * {
             margin: 0;
@@ -211,23 +212,23 @@
             text-align: center;
         }
 
-        /* УЛУЧШЕННЫЙ график работы - компактный и адаптивный */
+        /* УЛУЧШЕННЫЙ и УМЕНЬШЕННЫЙ график работы */
         .work-hours {
             background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.95));
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             max-width: 100%;
             overflow: hidden;
         }
 
         .work-hours h3 {
             color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -235,72 +236,71 @@
 
         .work-hours-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-            padding: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 15px 0;
+            padding: 12px;
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
+            border-radius: 8px;
         }
 
         .work-hours-item {
             text-align: center;
-            padding: 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 8px;
             transition: all 0.3s;
         }
 
         .work-hours-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 71, 87, 0.3);
         }
 
         .work-hours-item i {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--secondary);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .work-hours-item h4 {
             color: var(--light);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
         .work-hours-item p {
             color: var(--gray);
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin: 0;
         }
 
         .warning-text {
             color: #ff6b81 !important;
             font-weight: 600;
-            margin: 15px 0;
-            padding: 12px;
+            margin: 12px 0;
+            padding: 10px;
             background: rgba(255, 107, 129, 0.1);
-            border-radius: 8px;
-            font-size: 1rem;
-            line-height: 1.5;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         .guarantee-note {
             background: linear-gradient(135deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.1));
             border-left: 4px solid var(--secondary);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
             text-align: left;
             border: 1px solid rgba(255, 71, 87, 0.2);
         }
 
         .guarantee-note p {
             color: var(--light);
-            margin: 12px 0;
-            font-size: 1.1rem;
+            margin: 8px 0;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
         }
@@ -308,18 +308,18 @@
         .guarantee-note p:before {
             content: '•';
             color: var(--secondary);
-            font-size: 1.5rem;
-            margin-right: 10px;
+            font-size: 1.2rem;
+            margin-right: 8px;
         }
 
         .guarantee-note strong {
             color: var(--secondary);
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         /* Основные разделы */
         section {
-            padding: 100px 20px;
+            padding: 80px 20px;
             background-color: var(--card-bg);
             margin-bottom: 10px;
             border-radius: 16px;
@@ -333,9 +333,9 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             color: var(--secondary);
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             position: relative;
             padding-bottom: 15px;
         }
@@ -343,7 +343,7 @@
         .section-title:after {
             content: '';
             position: absolute;
-            width: 120px;
+            width: 100px;
             height: 4px;
             background: linear-gradient(90deg, var(--secondary), transparent);
             bottom: 0;
@@ -359,18 +359,18 @@
 
         .reasons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
         }
 
         .reason {
             background-color: rgba(10, 10, 10, 0.8);
-            padding: 35px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
             transition: all 0.4s;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
             height: 100%;
             display: flex;
@@ -379,18 +379,18 @@
         }
 
         .reason:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
             border-color: var(--secondary);
         }
 
         .reason-icon {
-            font-size: 3.5rem;
+            font-size: 2.8rem;
             color: var(--secondary);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             background: rgba(255, 71, 87, 0.15);
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -400,23 +400,23 @@
         }
 
         .reason h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--light);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
         }
 
         .reason p {
             color: var(--gray);
-            line-height: 1.8;
-            font-size: 1.1rem;
+            line-height: 1.6;
+            font-size: 1rem;
             margin-bottom: 15px;
         }
 
         .reason-details {
             text-align: left;
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -426,11 +426,11 @@
         }
 
         .reason-details li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--light);
-            font-size: 1rem;
+            font-size: 0.9rem;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
         }
 
         .reason-details li:before {
@@ -441,17 +441,14 @@
             font-weight: bold;
         }
 
-        /* Раздел о мастере */
+        /* УЛУЧШЕННЫЙ Раздел о мастере (упрощенный) */
         .master-section {
             background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(15, 15, 15, 0.95));
-            border-radius: 20px;
-            padding: 60px;
-            margin: 40px 0;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.7),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
             position: relative;
             overflow: hidden;
             backdrop-filter: blur(10px);
@@ -471,7 +468,7 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 60px;
+            gap: 40px;
         }
 
         .master-info {
@@ -481,12 +478,12 @@
 
         .master-info h2 {
             color: var(--secondary);
-            margin-bottom: 30px;
-            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-size: 2rem;
             line-height: 1.3;
             font-weight: 700;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 10px;
         }
 
         .master-info h2:after {
@@ -494,89 +491,80 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 80px;
-            height: 4px;
+            width: 60px;
+            height: 3px;
             background: var(--secondary);
             border-radius: 2px;
         }
 
         .master-info p {
-            margin-bottom: 25px;
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
             color: var(--light);
-            line-height: 1.8;
+            line-height: 1.6;
             text-align: justify;
         }
 
         .master-highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
         }
 
         .highlight {
             background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary);
             transition: all 0.3s;
         }
 
         .highlight:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .highlight h4 {
             color: var(--secondary);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .highlight p {
             color: var(--gray);
             margin: 0;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
 
         .master-skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .skill-tag {
             background: linear-gradient(135deg, rgba(255, 71, 87, 0.2), rgba(255, 71, 87, 0.1));
             color: var(--secondary);
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
             border: 1px solid rgba(255, 71, 87, 0.3);
             transition: all 0.3s;
-        }
-
-        .skill-tag:hover {
-            background: linear-gradient(135deg, rgba(255, 71, 87, 0.3), rgba(255, 71, 87, 0.2));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.2);
         }
 
         .experience {
             background: linear-gradient(135deg, var(--accent), #ff6b81);
             color: white;
             display: inline-block;
-            padding: 20px 40px;
-            border-radius: 12px;
+            padding: 15px 25px;
+            border-radius: 10px;
             font-weight: 700;
-            margin-top: 40px;
-            font-size: 1.3rem;
-            box-shadow: 
-                0 10px 30px rgba(255, 71, 87, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
             border: none;
             text-align: center;
             width: 100%;
@@ -586,10 +574,8 @@
         }
 
         .experience:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 15px 40px rgba(255, 71, 87, 0.4),
-                0 0 0 1px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 71, 87, 0.4);
         }
 
         /* Отзывы */
@@ -605,10 +591,10 @@
 
         .review {
             background-color: rgba(10, 10, 10, 0.8);
-            padding: 45px;
-            border-radius: 15px;
+            padding: 30px;
+            border-radius: 12px;
             box-shadow: var(--shadow);
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             position: relative;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -616,9 +602,9 @@
         .review:before {
             content: "\201C";
             position: absolute;
-            top: -25px;
-            left: 25px;
-            font-size: 6rem;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
             color: var(--secondary);
             font-family: Georgia, serif;
             opacity: 0.15;
@@ -626,57 +612,62 @@
 
         .review p {
             color: var(--light);
-            line-height: 1.9;
-            font-size: 1.15rem;
+            line-height: 1.7;
+            font-size: 1rem;
             text-align: justify;
         }
 
         .review-author {
             display: flex;
             align-items: center;
-            margin-top: 30px;
-            padding-top: 25px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .review-author-info h4 {
             color: var(--secondary);
             margin-bottom: 5px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .review-author-info p {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             text-align: left;
         }
 
         /* Форма заявки */
         .form-container {
             background-color: rgba(10, 10, 10, 0.95);
-            padding: 50px;
+            padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             max-width: 800px;
             margin: 0 auto;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .form-group {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: var(--light);
-            font-size: 1.1rem;
+            font-size: 1rem;
+        }
+
+        .form-group label.required:after {
+            content: " *";
+            color: var(--secondary);
         }
 
         .form-control {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             background-color: var(--input-bg);
             border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
@@ -693,6 +684,12 @@
 
         .form-control::placeholder {
             color: var(--gray);
+        }
+
+        .form-control[disabled] {
+            background-color: rgba(30, 30, 30, 0.5);
+            color: var(--gray);
+            cursor: not-allowed;
         }
 
         .checkbox-group {
@@ -733,15 +730,105 @@
         .checkbox-group label {
             color: var(--light);
             margin-bottom: 0;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
         }
 
         .word-count {
             text-align: right;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--gray);
             margin-top: 5px;
+        }
+
+        /* Календарь и выбор времени */
+        .datetime-selection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .datetime-selection {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .date-selection, .time-selection {
+            background-color: rgba(20, 20, 20, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .date-selection h3, .time-selection h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .flatpickr-input {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--input-bg);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--light);
+            cursor: pointer;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .time-slot {
+            padding: 12px 5px;
+            text-align: center;
+            background-color: var(--input-bg);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            color: var(--light);
+            font-size: 0.95rem;
+        }
+
+        .time-slot:hover {
+            border-color: var(--secondary);
+            background-color: rgba(255, 71, 87, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .time-slot.selected {
+            background-color: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        .time-slot.booked {
+            background-color: rgba(255, 71, 87, 0.1);
+            color: #ff6b81;
+            cursor: not-allowed;
+            border-color: rgba(255, 107, 129, 0.2);
+        }
+
+        .selected-datetime {
+            background-color: rgba(255, 71, 87, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--secondary);
+            border: 1px solid rgba(255, 71, 87, 0.3);
+            font-size: 1rem;
         }
 
         /* Кнопки в таблице */
@@ -750,7 +837,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin: 2px;
             transition: all 0.3s;
         }
@@ -781,7 +868,7 @@
 
         .modal-content {
             background-color: var(--card-bg);
-            padding: 50px;
+            padding: 40px;
             border-radius: 16px;
             max-width: 550px;
             width: 90%;
@@ -790,19 +877,19 @@
             position: relative;
             animation: modalFadeIn 0.5s;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
         }
 
         .close-modal {
             position: absolute;
-            top: 25px;
-            right: 25px;
-            font-size: 1.8rem;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
             cursor: pointer;
             color: var(--gray);
             transition: color 0.3s;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -815,7 +902,30 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Админ панель на полный экран */
+        /* Бета-версия предупреждение */
+        .beta-warning {
+            background: linear-gradient(135deg, rgba(255, 184, 0, 0.2), rgba(255, 184, 0, 0.1));
+            border-left: 4px solid #ffb800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: left;
+            border: 1px solid rgba(255, 184, 0, 0.3);
+        }
+
+        .beta-warning h4 {
+            color: #ffb800;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .beta-warning p {
+            color: var(--light);
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Админ панель на полный экран (скрытая) */
         .admin-panel {
             position: fixed;
             top: 0;
@@ -839,7 +949,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -847,18 +957,18 @@
         .admin-header h2 {
             color: var(--secondary);
             margin: 0;
-            font-size: 2rem;
+            font-size: 1.8rem;
         }
 
         .close-admin {
             background: transparent;
             border: none;
             color: var(--light);
-            font-size: 2rem;
+            font-size: 1.8rem;
             cursor: pointer;
             transition: color 0.3s;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -874,17 +984,17 @@
         /* Табы в админ панели */
         .admin-tabs {
             display: flex;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             flex-wrap: wrap;
         }
 
         .admin-tab {
-            padding: 15px 30px;
+            padding: 12px 25px;
             background: transparent;
             border: none;
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s;
@@ -922,21 +1032,21 @@
         .admin-table-container {
             overflow-x: auto;
             background: rgba(20, 20, 20, 0.8);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 15px;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .admin-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            min-width: 800px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            min-width: 700px;
         }
 
         .admin-table th, .admin-table td {
-            padding: 14px;
+            padding: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             text-align: left;
             color: var(--light);
@@ -960,36 +1070,36 @@
         .status-new {
             background: linear-gradient(135deg, var(--secondary), #ff2e43);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             display: inline-block;
         }
 
         .status-in-progress {
             background: linear-gradient(135deg, #ffa502, #ff7f00);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             display: inline-block;
         }
 
         .status-completed {
             background: linear-gradient(135deg, #2ed573, #1dd1a1);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             display: inline-block;
         }
 
         .status-cancelled {
             background: linear-gradient(135deg, #ff4757, #ff6b81);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             display: inline-block;
         }
 
@@ -1042,8 +1152,8 @@
         footer {
             background-color: rgba(0, 0, 0, 0.98);
             color: white;
-            padding: 70px 20px 35px;
-            margin-top: 100px;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -1051,22 +1161,22 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
         }
 
         .footer-section h3 {
-            margin-bottom: 30px;
-            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
             color: var(--secondary);
         }
 
         .footer-section h3:after {
             content: '';
             position: absolute;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: linear-gradient(90deg, var(--secondary), transparent);
             bottom: 0;
@@ -1078,26 +1188,26 @@
         }
 
         .contact-info li {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
         }
 
         .contact-info i {
-            margin-right: 15px;
+            margin-right: 12px;
             color: var(--secondary);
-            margin-top: 5px;
-            min-width: 20px;
-            font-size: 1.2rem;
+            margin-top: 4px;
+            min-width: 18px;
+            font-size: 1.1rem;
         }
 
         .copyright {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 25px;
+            margin-top: 50px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Адаптивность */
@@ -1109,16 +1219,16 @@
 
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             .master, .reasons {
                 flex-direction: column;
             }
             .master-section {
-                padding: 40px;
+                padding: 30px;
             }
             .work-hours {
-                padding: 25px;
+                padding: 18px;
             }
         }
 
@@ -1126,31 +1236,31 @@
             .header-container {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 12px;
             }
             nav ul {
-                margin-top: 15px;
+                margin-top: 12px;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 10px;
+                gap: 8px;
             }
             nav ul li {
                 margin: 0;
             }
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2rem;
             }
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             section {
-                padding: 70px 15px;
+                padding: 60px 15px;
             }
             .form-container {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
             .modal-content {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
             .admin-tabs {
                 flex-direction: column;
@@ -1159,39 +1269,42 @@
                 text-align: center;
             }
             .master-section {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
             .work-hours-grid {
                 grid-template-columns: 1fr;
-                padding: 15px;
+                padding: 12px;
+                gap: 10px;
             }
             .master-highlights {
                 grid-template-columns: 1fr;
             }
             body {
-                padding-top: 120px;
+                padding-top: 110px;
+            }
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
             .logo {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .reason {
-                padding: 25px 20px;
-            }
-            .work-hours {
                 padding: 20px 15px;
             }
-            .work-hours-grid {
-                padding: 10px;
-                gap: 10px;
+            .work-hours {
+                padding: 15px 12px;
             }
             .work-hours h3 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+            .time-slots {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1219,7 +1332,7 @@
                 </ul>
             </nav>
             <div class="user-section">
-                <button id="showAdminBtn" class="btn-main" aria-label="Админ панель">Админ</button>
+                <!-- Админ кнопка скрыта - доступ через тройной клик на логотип -->
             </div>
         </div>
     </header>
@@ -1232,7 +1345,7 @@
                 <p>Выезд на дом и удаленная помощь. Быстро, качественно, с гарантией!</p>
                 <button id="scrollToRequestBtn" class="btn-main" aria-label="Создать заявку на ремонт">Оставить заявку</button>
                 
-                <!-- УЛУЧШЕННЫЙ График работы -->
+                <!-- УЛУЧШЕННЫЙ и УМЕНЬШЕННЫЙ График работы -->
                 <div class="work-hours">
                     <h3><i class="fas fa-clock" aria-hidden="true"></i> График работы</h3>
                     
@@ -1285,25 +1398,23 @@
                 <div class="reason">
                     <div class="reason-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
                     <h3>Экспресс-ремонт</h3>
-                    <p>Мы понимаем, как важно вернуть устройство к жизни быстро. Среднее время выезда мастера - 30-40 минут. Большинство ремонтов мы выполняем на месте в течение 1-2 часов.</p>
+                    <p>Мы понимаем, как важно вернуть устройство к жизни быстро. Среднее время выезда мастера - 30-40 минут.</p>
                     <div class="reason-details">
                         <ul>
                             <li>Срочный выезд в течение 40 минут</li>
                             <li>Диагностика за 15 минут бесплатно</li>
                             <li>90% ремонтов выполняется на месте</li>
-                            <li>Работаем в удобное для вас время</li>
                         </ul>
                     </div>
                 </div>
                 <div class="reason">
                     <div class="reason-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
                     <h3>Гарантия и качество</h3>
-                    <p>Мы предоставляем официальную гарантию на все виды работ и используемые комплектующие. Все детали проходят тщательную проверку на соответствие стандартам качества.</p>
+                    <p>Мы предоставляем официальную гарантию на все виды работ и используемые комплектующие.</p>
                     <div class="reason-details">
                         <ul>
                             <li>Гарантия до 30 дней на все работы</li>
                             <li>Используем только оригинальные комплектующие</li>
-                            <li>Бесплатная постгарантийная диагностика</li>
                             <li>Прозрачная смета без скрытых платежей</li>
                         </ul>
                     </div>
@@ -1311,59 +1422,19 @@
                 <div class="reason">
                     <div class="reason-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                     <h3>Опытный мастер</h3>
-                    <p>Андрей - профессиональный мастер с 2-летним стажем работы. Имеет глубокие знания в области компьютерного оборудования и современных технологий ремонта.</p>
+                    <p>Андрей - профессиональный мастер с 2-летним стажем работы. Более 100 успешно выполненных заказов.</p>
                     <div class="reason-details">
                         <ul>
                             <li>Специалист с практическим опытом от 2 лет</li>
-                            <li>Постоянное обучение и повышение квалификации</li>
                             <li>Индивидуальный подход к каждому клиенту</li>
                             <li>Более 100 успешно выполненных заказов</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon"><i class="fas fa-handshake" aria-hidden="true"></i></div>
-                    <h3>Честность и прозрачность</h3>
-                    <p>Мы ценим доверие наших клиентов и работаем максимально честно. Цена озвучивается до начала работ и не меняется в процессе. Все этапы ремонта согласовываются с клиентом.</p>
-                    <div class="reason-details">
-                        <ul>
-                            <li>Фиксированная цена до начала работ</li>
-                            <li>Подробный отчет о проделанной работе</li>
-                            <li>Консультация по дальнейшей эксплуатации</li>
-                            <li>Возможность удаленного контроля ремонта</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-                    <h3>Полный спектр услуг</h3>
-                    <p>Мы решаем любые проблемы с компьютерной техникой - от простой чистки от пыли до сложного ремонта материнских плат и восстановления данных с поврежденных носителей.</p>
-                    <div class="reason-details">
-                        <ul>
-                            <li>Ремонт любой сложности</li>
-                            <li>Восстановление данных</li>
-                            <li>Апгрейд и модернизация</li>
-                            <li>Установка и настройка ПО</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="reason">
-                    <div class="reason-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
-                    <h3>Клиентоориентированность</h3>
-                    <p>Мы не просто ремонтируем технику - мы заботимся о комфорте наших клиентов. Гибкий график, выезд в удобное время, консультации после ремонта - это наш стандарт работы.</p>
-                    <div class="reason-details">
-                        <ul>
-                            <li>Работаем в удобное для вас время</li>
-                            <li>Бесплатная консультация после ремонта</li>
-                            <li>Система скидок для постоянных клиентов</li>
-                            <li>Быстрая обратная связь</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Раздел о мастере -->
+        <!-- УЛУЧШЕННЫЙ Раздел о мастере (упрощенный) -->
         <section id="master" class="fade-in">
             <div class="master-section">
                 <div class="master">
@@ -1380,14 +1451,6 @@
                                 <h4>Опыт работы</h4>
                                 <p>2+ года практического опыта, постоянное обучение и повышение квалификации</p>
                             </div>
-                            <div class="highlight">
-                                <h4>Подход к работе</h4>
-                                <p>Честность, прозрачность, индивидуальный подход к каждому клиенту</p>
-                            </div>
-                            <div class="highlight">
-                                <h4>Оборудование</h4>
-                                <p>Современное диагностическое оборудование и профессиональные инструменты</p>
-                            </div>
                         </div>
                         
                         <div class="master-skills">
@@ -1396,11 +1459,8 @@
                             <span class="skill-tag">Ремонт компьютеров</span>
                             <span class="skill-tag">Восстановление данных</span>
                             <span class="skill-tag">Замена комплектующих</span>
-                            <span class="skill-tag">Чистка от пыли</span>
                             <span class="skill-tag">Установка ОС</span>
                             <span class="skill-tag">Удаленная помощь</span>
-                            <span class="skill-tag">Апгрейд</span>
-                            <span class="skill-tag">Модернизация</span>
                         </div>
                         
                         <div class="experience">
@@ -1416,7 +1476,7 @@
             <h2 class="section-title">Отзывы клиентов</h2>
             <div class="review-slider">
                 <div class="review">
-                    <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение 40 минут, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 14 дней на работу. Отдельно хочу отметить вежливость и профессионализм - все объяснил, показал, дал рекомендации по эксплуатации. Компьютер работает уже полгода без нареканий. Теперь только к нему буду обращаться и всем рекомендую! Особенно понравилось, что цена была озвучена сразу и в процессе не изменилась.</p>
+                    <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение 40 минут, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 14 дней на работу. Отдельно хочу отметить вежливость и профессионализм - все объяснил, показал, дал рекомендации по эксплуатации.</p>
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Сергей Волков</h4>
@@ -1425,7 +1485,7 @@
                     </div>
                 </div>
                 <div class="review">
-                    <p>Работаю удаленно, и когда сломался ноутбук, это была катастрофа. Андрей помог удаленно за 40 минут - проблема была в вирусах и забитой системе. Не только все починил, но и настроил резервное копирование, показал, как избежать подобных проблем в будущем. Стоимость услуги была абсолютно адекватной, а результат превзошел ожидания. Спасибо огромное за спасенный дедлайн и нервы! Отдельно хочу отметить оперативность - проблему решили в тот же день, хотя обратилась вечером. Теперь всем коллегам рекомендую этого мастера.</p>
+                    <p>Работаю удаленно, и когда сломался ноутбук, это была катастрофа. Андрей помог удаленно за 40 минут - проблема была в вирусах и забитой системе. Не только все починил, но и настроил резервное копирование, показал, как избежать подобных проблем в будущем.</p>
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Мария Соколова</h4>
@@ -1434,7 +1494,7 @@
                     </div>
                 </div>
                 <div class="review">
-                    <p>У меня сложилось самое лучшее впечатление от работы мастера. Компьютер начал сильно греться и выключаться. Андрей приехал, тщательно все проверил, почистил от пыли, заменил термопасту, настроил систему охлаждения. Работал аккуратно, на столе после него не осталось ни соринки. Цена была озвучена заранее и не изменилась. Компьютер теперь работает как новый, даже лучше, чем после покупки. Обязательно буду рекомендовать знакомым! Особенно порадовала гарантия и то, что мастер сам перезвонил через неделю, поинтересовался, как работает техника.</p>
+                    <p>У меня сложилось самое лучшее впечатление от работы мастера. Компьютер начал сильно греться и выключаться. Андрей приехал, тщательно все проверил, почистил от пыли, заменил термопасту, настроил систему охлаждения. Работал аккуратно, на столе после него не осталось ни соринки.</p>
                     <div class="review-author">
                         <div class="review-author-info">
                             <h4>Алексей Морозов</h4>
@@ -1450,22 +1510,39 @@
             <h2 class="section-title">Оставить заявку на ремонт</h2>
             <div class="form-container">
                 <div class="work-hours" style="margin-top: 0;">
-                    <h3>График работы мастера</h3>
-                    <p>Пн-Пт: 12:00 - 23:00 | Сб-Вс: 13:00 - 22:00</p>
-                    <p class="warning-text">Выезд в течение 30-40 минут только по Москве</p>
+                    <h3>Интервал записи: 2 часа</h3>
+                    <p>Выберите удобное время в рабочее время мастерской</p>
+                </div>
+                
+                <!-- Выбор даты и времени -->
+                <div class="datetime-selection">
+                    <div class="date-selection">
+                        <h3>Выберите дату *</h3>
+                        <input type="text" id="datePicker" class="flatpickr-input" placeholder="Выберите дату" readonly required>
+                    </div>
+                    <div class="time-selection">
+                        <h3>Выберите время *</h3>
+                        <div id="timeSlots" class="time-slots">
+                            <!-- Временные слоты будут сгенерированы скриптом -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="selectedDateTime" class="selected-datetime" style="display:none;">
+                    Вы выбрали: <span id="selectedDate"></span> в <span id="selectedTime"></span>
                 </div>
                 
                 <form id="simpleRequestForm">
                     <div class="form-group">
-                        <label for="clientName">Ваше имя *</label>
+                        <label for="clientName" class="required">Ваше имя</label>
                         <input type="text" id="clientName" class="form-control" required placeholder="Иванов Иван">
                     </div>
                     <div class="form-group">
-                        <label for="clientPhone">Номер телефона *</label>
+                        <label for="clientPhone" class="required">Номер телефона</label>
                         <input type="tel" id="clientPhone" class="form-control" required placeholder="+7 (999) 123-45-67">
                     </div>
                     <div class="form-group">
-                        <label for="clientAddress">Адрес в Москве *</label>
+                        <label for="clientAddress" class="required">Адрес в Москве</label>
                         <input type="text" id="clientAddress" class="form-control" required placeholder="Улица, дом, квартира">
                         <div class="checkbox-group">
                             <input type="checkbox" id="remoteService">
@@ -1473,29 +1550,18 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="deviceType">Тип устройства *</label>
+                        <label for="deviceType" class="required">Тип устройства</label>
                         <select id="deviceType" class="form-control" required>
                             <option value="">Выберите тип устройства</option>
                             <option value="Ноутбук">Ноутбук</option>
                             <option value="Компьютер">Стационарный компьютер</option>
-                            <option value="Моноблок">Моноблок</option>
                             <option value="Другое">Другое устройство</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="problemDescription">Описание проблемы *</label>
+                        <label for="problemDescription" class="required">Описание проблемы</label>
                         <textarea id="problemDescription" class="form-control" rows="4" required placeholder="Что случилось с устройством?"></textarea>
                         <div class="word-count">Осталось символов: <span id="charCount">500</span></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="preferredTime">Предпочтительное время связи</label>
-                        <select id="preferredTime" class="form-control">
-                            <option value="">В любое время</option>
-                            <option value="12:00-15:00">12:00-15:00</option>
-                            <option value="15:00-18:00">15:00-18:00</option>
-                            <option value="18:00-21:00">18:00-21:00</option>
-                            <option value="21:00-23:00">21:00-23:00</option>
-                        </select>
                     </div>
                     <button type="submit" class="btn-main" style="width:100%;">Отправить заявку</button>
                 </form>
@@ -1529,7 +1595,6 @@
                         <li><i class="fas fa-desktop" aria-hidden="true"></i> Ремонт компьютеров</li>
                         <li><i class="fas fa-wifi" aria-hidden="true"></i> Удаленная помощь</li>
                         <li><i class="fas fa-database" aria-hidden="true"></i> Восстановление данных</li>
-                        <li><i class="fas fa-tools" aria-hidden="true"></i> Апгрейд и модернизация</li>
                     </ul>
                 </div>
             </div>
@@ -1547,11 +1612,19 @@
             <div id="successMessage">
                 <!-- Сообщение будет вставлено скриптом -->
             </div>
+            
+            <!-- Бета-версия предупреждение -->
+            <div class="beta-warning">
+                <h4><i class="fas fa-exclamation-triangle"></i> Внимание!</h4>
+                <p>Сайт находится в бета-версии.</p>
+                <p>За актуальным временем и датой обращайтесь в Telegram или по телефону указанным ниже.</p>
+            </div>
+            
             <button id="okSuccess" class="btn-main" style="width:100%; margin-top:20px;">ОК</button>
         </div>
     </div>
 
-    <!-- Админ панель -->
+    <!-- Админ панель (скрытая) -->
     <div id="adminPanel" class="admin-panel" aria-hidden="true" role="dialog" aria-labelledby="adminPanelTitle">
         <div class="admin-header">
             <h2 id="adminPanelTitle"><i class="fas fa-cogs" aria-hidden="true"></i> Админ панель MSK REPAIR PC</h2>
@@ -1569,14 +1642,14 @@
         <div id="activeTab" class="admin-tab-content active">
             <div class="admin-content">
                 <div class="admin-table-container">
-                    <div class="work-hours" style="margin: 0 0 20px 0; padding: 20px;">
-                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Управление заявками</h3>
-                        <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                    <div class="work-hours" style="margin: 0 0 15px 0; padding: 15px;">
+                        <h3 style="margin-bottom: 12px; font-size: 1.2rem;">Управление заявками</h3>
+                        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
                             <div style="flex: 1;">
                                 <p style="color: var(--light);">Всего заявок: <span id="totalRequests">0</span></p>
                             </div>
                             <div>
-                                <button id="refreshAdminBtn" class="btn-main">Обновить список</button>
+                                <button id="refreshAdminBtn" class="btn-main" style="padding: 10px 20px;">Обновить список</button>
                             </div>
                         </div>
                     </div>
@@ -1589,8 +1662,8 @@
                                 <th>Телефон</th>
                                 <th>Устройство</th>
                                 <th>Адрес</th>
+                                <th>Дата/Время</th>
                                 <th>Статус</th>
-                                <th>Дата</th>
                                 <th>Действия</th>
                             </tr>
                         </thead>
@@ -1606,8 +1679,8 @@
         <div id="archiveTab" class="admin-tab-content">
             <div class="admin-content">
                 <div class="admin-table-container">
-                    <div class="work-hours" style="margin: 0 0 20px 0; padding: 20px;">
-                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Архив заявок</h3>
+                    <div class="work-hours" style="margin: 0 0 15px 0; padding: 15px;">
+                        <h3 style="margin-bottom: 12px; font-size: 1.2rem;">Архив заявок</h3>
                         <p style="color: var(--gray);">Здесь хранятся завершенные и отмененные заявки</p>
                     </div>
                     
@@ -1619,8 +1692,8 @@
                                 <th>Телефон</th>
                                 <th>Устройство</th>
                                 <th>Проблема</th>
-                                <th>Статус</th>
                                 <th>Дата</th>
+                                <th>Статус</th>
                             </tr>
                         </thead>
                         <tbody id="adminArchiveTable">
@@ -1635,23 +1708,23 @@
         <div id="exportTab" class="admin-tab-content">
             <div class="admin-content">
                 <div class="admin-table-container">
-                    <div class="work-hours" style="margin: 0 0 20px 0; padding: 20px;">
-                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;">Экспорт данных</h3>
-                        <p style="color: var(--light); margin-bottom: 20px;">Вы можете экспортировать все заявки в формате JSON для резервного копирования</p>
+                    <div class="work-hours" style="margin: 0 0 15px 0; padding: 15px;">
+                        <h3 style="margin-bottom: 12px; font-size: 1.2rem;">Экспорт данных</h3>
+                        <p style="color: var(--light); margin-bottom: 15px;">Вы можете экспортировать все заявки для резервного копирования</p>
                         
-                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                            <button id="exportJsonBtn" class="btn-main">
+                        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                            <button id="exportJsonBtn" class="btn-main" style="padding: 10px 20px;">
                                 <i class="fas fa-download" aria-hidden="true"></i> Экспорт в JSON
                             </button>
-                            <button id="exportCsvBtn" class="btn-main" style="background: #2ed573;">
+                            <button id="exportCsvBtn" class="btn-main" style="background: #2ed573; padding: 10px 20px;">
                                 <i class="fas fa-file-csv" aria-hidden="true"></i> Экспорт в CSV
                             </button>
-                            <button id="clearAllBtn" class="btn-main" style="background: #ff4757;">
+                            <button id="clearAllBtn" class="btn-main" style="background: #ff4757; padding: 10px 20px;">
                                 <i class="fas fa-trash" aria-hidden="true"></i> Очистить все
                             </button>
                         </div>
                         
-                        <div id="exportResult" style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; display: none;">
+                        <div id="exportResult" style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; display: none;">
                             <!-- Результат экспорта -->
                         </div>
                     </div>
@@ -1660,11 +1733,10 @@
         </div>
     </div>
 
-    <!-- Загрузка данных в админ панель -->
-    <div id="dataLoader" style="display:none;"></div>
-
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 <script>
-    // Конфигурация Telegram бота (ЗАМЕНИТЕ НА СВОИ ДАННЫЕ!)
+    // Конфигурация Telegram бота
     const TELEGRAM_BOT_TOKEN = '8400236799:AAGX1M-rA4dbjvSsVxzxpt59vOtM_LpABV8';
     const TELEGRAM_CHAT_ID = '1070056420';
     
@@ -1675,6 +1747,11 @@
     let isParallaxScrolling = false;
     let parallaxTimeout = null;
     let adminAccessEnabled = false;
+    let selectedDate = null;
+    let selectedTime = null;
+    let flatpickrInstance = null;
+    let bookedSlots = {};
+    let timeSlotsInterval = 2; // Интервал записи 2 часа
 
     // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
@@ -1687,15 +1764,184 @@
         // Настройка обработчиков событий
         setupEventListeners();
         
-        // Настройка простой формы заявки
-        setupSimpleRequestForm();
+        // Инициализация календаря
+        initDatePicker();
         
         // Настройка админ доступа
         setupAdminAccess();
         
         // Загрузка тестовых данных (если нет своих)
         loadSampleDataIfEmpty();
+        
+        // Загрузка занятых слотов
+        loadBookedSlots();
     });
+
+    // Инициализация календаря
+    function initDatePicker() {
+        // Рассчитываем минимальную и максимальную дату
+        const today = new Date();
+        const minDate = new Date(today);
+        minDate.setDate(today.getDate()); // Сегодня
+        
+        const maxDate = new Date(today);
+        maxDate.setDate(today.getDate() + 30); // 30 дней вперед
+        
+        flatpickrInstance = flatpickr("#datePicker", {
+            locale: "ru",
+            minDate: minDate,
+            maxDate: maxDate,
+            dateFormat: "d.m.Y",
+            disableMobile: true,
+            onChange: function(selectedDates, dateStr) {
+                selectedDate = dateStr;
+                selectedTime = null;
+                updateTimeSlots();
+                updateSelectedDateTimeDisplay();
+            }
+        });
+        
+        // Установка сегодняшней даты по умолчанию
+        const todayFormatted = `${today.getDate().toString().padStart(2, '0')}.${(today.getMonth() + 1).toString().padStart(2, '0')}.${today.getFullYear()}`;
+        if (flatpickrInstance) {
+            flatpickrInstance.setDate(todayFormatted, false);
+        }
+        selectedDate = todayFormatted;
+        
+        // Генерация временных слотов
+        updateTimeSlots();
+    }
+
+    // Загрузка занятых слотов
+    function loadBookedSlots() {
+        try {
+            const requests = loadRequests();
+            bookedSlots = {};
+            
+            requests.forEach(request => {
+                if (request.appointmentDate && request.appointmentTime) {
+                    const slotKey = `${request.appointmentDate}_${request.appointmentTime}`;
+                    bookedSlots[slotKey] = true;
+                }
+            });
+        } catch (error) {
+            console.error('Ошибка загрузки занятых слотов:', error);
+        }
+    }
+
+    // Проверка занятости слота
+    function isSlotBooked(date, time) {
+        const slotKey = `${date}_${time}`;
+        return bookedSlots[slotKey] || false;
+    }
+
+    // Генерация временных слотов с интервалом 2 часа
+    function updateTimeSlots() {
+        if (!selectedDate) return;
+        
+        const timeSlotsContainer = document.getElementById('timeSlots');
+        if (!timeSlotsContainer) return;
+        
+        timeSlotsContainer.innerHTML = '';
+        
+        // Определяем день недели для выбранной даты
+        const dateParts = selectedDate.split('.');
+        const dateObj = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
+        const dayOfWeek = dateObj.getDay();
+        
+        // Определяем рабочие часы
+        let workHours = [];
+        
+        // Пн-Пт: 12:00 - 23:00 с интервалом 2 часа
+        if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+            for (let hour = 12; hour <= 21; hour += timeSlotsInterval) {
+                workHours.push(`${hour.toString().padStart(2, '0')}:00`);
+            }
+        } 
+        // Сб-Вс: 13:00 - 22:00 с интервалом 2 часа
+        else {
+            for (let hour = 13; hour <= 20; hour += timeSlotsInterval) {
+                workHours.push(`${hour.toString().padStart(2, '0')}:00`);
+            }
+        }
+        
+        // Создаем кнопки для временных слотов
+        workHours.forEach(time => {
+            const timeSlot = document.createElement('button');
+            timeSlot.className = 'time-slot';
+            timeSlot.textContent = time;
+            timeSlot.dataset.time = time;
+            timeSlot.type = 'button';
+            timeSlot.setAttribute('aria-label', `Выбрать время ${time}`);
+            
+            // Проверяем, занят ли слот
+            if (isSlotBooked(selectedDate, time)) {
+                timeSlot.classList.add('booked');
+                timeSlot.disabled = true;
+                timeSlot.setAttribute('aria-label', `Время ${time} занято`);
+            } else {
+                timeSlot.addEventListener('click', function() {
+                    selectTimeSlot(time);
+                });
+            }
+            
+            // Если это выбранный слот
+            if (selectedTime === time) {
+                timeSlot.classList.add('selected');
+                timeSlot.setAttribute('aria-label', `Выбрано время ${time}`);
+            }
+            
+            timeSlotsContainer.appendChild(timeSlot);
+        });
+        
+        // Если выбранное время занято, сбрасываем его
+        if (selectedTime && isSlotBooked(selectedDate, selectedTime)) {
+            selectedTime = null;
+            updateSelectedDateTimeDisplay();
+        }
+        
+        // Если нет доступных слотов
+        if (workHours.length === 0) {
+            timeSlotsContainer.innerHTML = '<p style="color: var(--gray); text-align: center; padding: 20px;">Нет доступных временных слотов на эту дату</p>';
+        }
+    }
+
+    // Выбор временного слота
+    function selectTimeSlot(time) {
+        // Снимаем выделение со всех слотов
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.classList.remove('selected');
+            slot.setAttribute('aria-label', slot.classList.contains('booked') ? 
+                `Время ${slot.dataset.time} занято` : `Выбрать время ${slot.dataset.time}`);
+        });
+        
+        // Выделяем выбранный слот
+        const selectedSlot = document.querySelector(`.time-slot[data-time="${time}"]`);
+        if (selectedSlot && !selectedSlot.classList.contains('booked')) {
+            selectedSlot.classList.add('selected');
+            selectedSlot.setAttribute('aria-label', `Выбрано время ${time}`);
+            selectedTime = time;
+            updateSelectedDateTimeDisplay();
+        }
+    }
+
+    // Обновление отображения выбранной даты и времени
+    function updateSelectedDateTimeDisplay() {
+        const selectedDateTimeDiv = document.getElementById('selectedDateTime');
+        const selectedDateSpan = document.getElementById('selectedDate');
+        const selectedTimeSpan = document.getElementById('selectedTime');
+        
+        if (!selectedDateTimeDiv || !selectedDateSpan || !selectedTimeSpan) return;
+        
+        if (selectedDate && selectedTime) {
+            selectedDateSpan.textContent = selectedDate;
+            selectedTimeSpan.textContent = selectedTime;
+            selectedDateTimeDiv.style.display = 'block';
+            selectedDateTimeDiv.setAttribute('aria-live', 'polite');
+        } else {
+            selectedDateTimeDiv.style.display = 'none';
+        }
+    }
 
     // Настройка простой формы заявки
     function setupSimpleRequestForm() {
@@ -1722,15 +1968,19 @@
             });
         }
         
-        // Чекбокс "Удаленная помощь"
+        // Чекбокс "Удаленная помощь" - блокируем поле адреса
         const remoteCheckbox = document.getElementById('remoteService');
         if (remoteCheckbox) {
             remoteCheckbox.addEventListener('change', function() {
                 const addressField = document.getElementById('clientAddress');
                 if (this.checked) {
+                    addressField.value = 'Удаленная помощь';
+                    addressField.disabled = true;
                     addressField.placeholder = "Для удаленной помощи не требуется";
                     addressField.required = false;
                 } else {
+                    addressField.value = '';
+                    addressField.disabled = false;
                     addressField.placeholder = "Улица, дом, квартира";
                     addressField.required = true;
                 }
@@ -1740,6 +1990,12 @@
         // Отправка формы
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Проверка выбора даты и времени
+            if (!selectedDate || !selectedTime) {
+                alert('Пожалуйста, выберите дату и время для записи');
+                return;
+            }
             
             // Собираем данные
             const requestData = {
@@ -1751,14 +2007,16 @@
                     : document.getElementById('clientAddress').value.trim(),
                 device: document.getElementById('deviceType').value,
                 problem: document.getElementById('problemDescription').value.trim(),
-                time: document.getElementById('preferredTime').value,
+                appointmentDate: selectedDate,
+                appointmentTime: selectedTime,
                 date: new Date().toLocaleString('ru-RU'),
                 status: 'new',
                 timestamp: Date.now()
             };
             
             // Валидация
-            if (!requestData.name || !requestData.phone || !requestData.device || !requestData.problem) {
+            if (!requestData.name || !requestData.phone || !requestData.address || 
+                !requestData.device || !requestData.problem) {
                 alert('Пожалуйста, заполните все обязательные поля');
                 return;
             }
@@ -1776,12 +2034,21 @@
                 // Отправляем уведомление в Telegram
                 sendTelegramNotification(requestData);
                 
+                // Обновляем занятые слоты
+                loadBookedSlots();
+                
                 // Очищаем форму
                 form.reset();
                 document.getElementById('charCount').textContent = '500';
                 document.getElementById('remoteService').checked = false;
+                document.getElementById('clientAddress').disabled = false;
                 document.getElementById('clientAddress').placeholder = "Улица, дом, квартира";
                 document.getElementById('clientAddress').required = true;
+                
+                // Сбрасываем выбор времени
+                selectedTime = null;
+                updateSelectedDateTimeDisplay();
+                updateTimeSlots();
             } else {
                 alert('Ошибка сохранения заявки. Попробуйте еще раз.');
             }
@@ -1844,12 +2111,10 @@
                 <p><strong>Номер заявки:</strong> ${requestData.id}</p>
                 <p><strong>Телефон:</strong> ${requestData.phone}</p>
                 <p><strong>Устройство:</strong> ${requestData.device}</p>
+                <p><strong>Дата и время записи:</strong> ${requestData.appointmentDate} в ${requestData.appointmentTime}</p>
                 <p><strong>Дата создания:</strong> ${requestData.date}</p>
                 <p style="margin-top: 15px; color: var(--secondary); font-weight: bold;">
                     Мастер свяжется с вами в ближайшее время!
-                </p>
-                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--gray);">
-                    Если звонок не поступит, обратитесь по контактам внизу страницы.
                 </p>
             `;
         }
@@ -1860,8 +2125,7 @@
 
     // Отправка уведомления в Telegram
     function sendTelegramNotification(requestData) {
-        if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID || 
-            TELEGRAM_BOT_TOKEN === 'ВАШ_BOT_TOKEN' || TELEGRAM_CHAT_ID === 'ВАШ_CHAT_ID') {
+        if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
             console.log('Telegram уведомления не настроены');
             return;
         }
@@ -1873,9 +2137,10 @@
 📞 Телефон: ${requestData.phone}
 📍 Адрес: ${requestData.address}
 💻 Устройство: ${requestData.device}
-⏰ Время: ${requestData.time || 'Любое'}
+📅 Дата записи: ${requestData.appointmentDate}
+⏰ Время записи: ${requestData.appointmentTime}
 📝 Проблема: ${requestData.problem.substring(0, 300)}
-📅 Дата: ${requestData.date}`;
+📅 Дата создания: ${requestData.date}`;
         
         const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
         
@@ -1897,28 +2162,38 @@
             }
         })
         .catch(error => {
-            console.error('Ошибка сети при отправке в Telegram:', error);
+            console.error('Ошибка сети при отправки в Telegram:', error);
         });
     }
 
-    // Настройка админ доступа
+    // Настройка админ доступа (скрытый доступ по тройному клику на логотип)
     function setupAdminAccess() {
-        const adminBtn = document.getElementById('showAdminBtn');
-        if (!adminBtn) return;
+        let adminClickCount = 0;
+        let clickTimeout;
         
-        adminBtn.addEventListener('click', function() {
-            if (!adminAccessEnabled) {
-                const password = prompt('Введите пароль для доступа к админ панели:');
-                if (password === ADMIN_PASSWORD) {
-                    adminAccessEnabled = true;
-                    showAdminPanel();
-                } else if (password !== null) {
-                    alert('Неверный пароль');
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.addEventListener('click', function(e) {
+                adminClickCount++;
+                
+                clearTimeout(clickTimeout);
+                clickTimeout = setTimeout(() => {
+                    adminClickCount = 0;
+                }, 1000);
+                
+                if (adminClickCount === 3) {
+                    e.preventDefault();
+                    const password = prompt('Введите пароль для доступа к админ панели:');
+                    if (password === ADMIN_PASSWORD) {
+                        adminAccessEnabled = true;
+                        showAdminPanel();
+                    } else if (password !== null) {
+                        alert('Неверный пароль');
+                    }
+                    adminClickCount = 0;
                 }
-            } else {
-                showAdminPanel();
-            }
-        });
+            });
+        }
         
         // Переключение вкладок в админ панели
         document.querySelectorAll('.admin-tab').forEach(tab => {
@@ -1954,6 +2229,7 @@
         if (refreshAdminBtn) {
             refreshAdminBtn.addEventListener('click', function() {
                 updateAdminPanel();
+                updateArchivePanel();
             });
         }
         
@@ -1981,6 +2257,7 @@
                     localStorage.removeItem('mskrepair_requests');
                     updateAdminPanel();
                     updateArchivePanel();
+                    loadBookedSlots();
                     showExportResult('Все данные успешно удалены', 'success');
                 }
             });
@@ -2018,7 +2295,7 @@
         if (requests.length === 0) {
             tableBody.innerHTML = `
                 <tr>
-                    <td colspan="8" style="text-align:center; padding: 30px; color: var(--gray);">
+                    <td colspan="8" style="text-align:center; padding: 20px; color: var(--gray);">
                         Нет активных заявок
                     </td>
                 </tr>`;
@@ -2030,18 +2307,11 @@
         
         let html = '';
         requests.forEach(request => {
-            const statusText = request.status === 'new' ? 'Новая' : 
-                             request.status === 'in_progress' ? 'В работе' :
-                             request.status === 'completed' ? 'Завершена' : 'Отменена';
+            // Показываем только активные заявки (новые и в работе)
+            if (request.status !== 'new' && request.status !== 'in_progress') return;
             
-            const statusClass = request.status === 'new' ? 'status-new' :
-                               request.status === 'in_progress' ? 'status-in-progress' :
-                               request.status === 'completed' ? 'status-completed' : 'status-cancelled';
-            
-            // Обрезаем длинную проблему для таблицы
-            const shortProblem = request.problem.length > 50 
-                ? request.problem.substring(0, 50) + '...' 
-                : request.problem;
+            const statusText = request.status === 'new' ? 'Новая' : 'В работе';
+            const statusClass = request.status === 'new' ? 'status-new' : 'status-in-progress';
             
             html += `
             <tr>
@@ -2050,8 +2320,8 @@
                 <td>${request.phone}</td>
                 <td>${request.device}</td>
                 <td>${request.address}</td>
+                <td>${request.appointmentDate || ''} ${request.appointmentTime || ''}</td>
                 <td><span class="${statusClass}">${statusText}</span></td>
-                <td>${request.date}</td>
                 <td>
                     ${request.status === 'new' ? 
                       `<button onclick="changeRequestStatus('${request.id}', 'in_progress')" 
@@ -2061,10 +2331,8 @@
                       `<button onclick="changeRequestStatus('${request.id}', 'completed')" 
                               class="btn-small" style="background:#2ed573;">Завершить</button>` : 
                       ''}
-                    ${request.status !== 'cancelled' ? 
-                      `<button onclick="changeRequestStatus('${request.id}', 'cancelled')" 
-                              class="btn-small" style="background:#ff4757;">Отменить</button>` : 
-                      ''}
+                    <button onclick="changeRequestStatus('${request.id}', 'cancelled')" 
+                            class="btn-small" style="background:#ff4757;">Отменить</button>
                     <button onclick="deleteRequest('${request.id}')" 
                             class="btn-small" style="background:#333;">Удалить</button>
                 </td>
@@ -2072,7 +2340,12 @@
             `;
         });
         
-        tableBody.innerHTML = html;
+        tableBody.innerHTML = html || `
+            <tr>
+                <td colspan="8" style="text-align:center; padding: 20px; color: var(--gray);">
+                    Нет активных заявок
+                </td>
+            </tr>`;
     }
 
     // Обновление архива
@@ -2090,7 +2363,7 @@
         if (archiveRequests.length === 0) {
             tableBody.innerHTML = `
                 <tr>
-                    <td colspan="7" style="text-align:center; padding: 30px; color: var(--gray);">
+                    <td colspan="7" style="text-align:center; padding: 20px; color: var(--gray);">
                         Архив пуст
                     </td>
                 </tr>`;
@@ -2106,8 +2379,8 @@
             const statusClass = request.status === 'completed' ? 'status-completed' : 'status-cancelled';
             
             // Обрезаем длинную проблему для таблицы
-            const shortProblem = request.problem.length > 100 
-                ? request.problem.substring(0, 100) + '...' 
+            const shortProblem = request.problem.length > 80 
+                ? request.problem.substring(0, 80) + '...' 
                 : request.problem;
             
             html += `
@@ -2117,8 +2390,8 @@
                 <td>${request.phone}</td>
                 <td>${request.device}</td>
                 <td title="${request.problem}">${shortProblem}</td>
-                <td><span class="${statusClass}">${statusText}</span></td>
                 <td>${request.date}</td>
+                <td><span class="${statusClass}">${statusText}</span></td>
             </tr>
             `;
         });
@@ -2133,17 +2406,14 @@
         
         if (index !== -1) {
             requests[index].status = newStatus;
-            requests[index].date = new Date().toLocaleString('ru-RU'); // Обновляем дату изменения
+            requests[index].date = new Date().toLocaleString('ru-RU');
             localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
             updateAdminPanel();
             updateArchivePanel();
+            loadBookedSlots();
             
             // Отправляем уведомление в Telegram об изменении статуса
-            if (newStatus === 'completed') {
-                sendStatusTelegramNotification(requests[index], '✅ ЗАВЕРШЕНА');
-            } else if (newStatus === 'cancelled') {
-                sendStatusTelegramNotification(requests[index], '❌ ОТМЕНЕНА');
-            }
+            sendStatusTelegramNotification(requests[index], newStatus);
         }
     };
 
@@ -2155,12 +2425,17 @@
             localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
             updateAdminPanel();
             updateArchivePanel();
+            loadBookedSlots();
         }
     };
 
     // Отправка уведомления об изменении статуса в Telegram
-    function sendStatusTelegramNotification(requestData, statusText) {
+    function sendStatusTelegramNotification(requestData, status) {
         if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) return;
+        
+        const statusText = status === 'completed' ? '✅ ЗАВЕРШЕНА' : 
+                         status === 'cancelled' ? '❌ ОТМЕНЕНА' : 
+                         '🔄 В РАБОТЕ';
         
         const message = `${statusText} - ЗАЯВКА MSK REPAIR PC
 
@@ -2209,7 +2484,7 @@
         }
         
         // Заголовки CSV
-        let csv = 'ID;Имя;Телефон;Адрес;Устройство;Проблема;Время;Статус;Дата\n';
+        let csv = 'ID;Имя;Телефон;Адрес;Устройство;Проблема;Дата записи;Время записи;Статус;Дата создания\n';
         
         // Данные
         requests.forEach(request => {
@@ -2220,7 +2495,8 @@
                 `"${request.address}"`,
                 `"${request.device}"`,
                 `"${request.problem.replace(/"/g, '""')}"`,
-                request.time || '',
+                request.appointmentDate || '',
+                request.appointmentTime || '',
                 request.status,
                 request.date
             ];
@@ -2305,6 +2581,12 @@
                     modal.classList.remove('active');
                 }
             });
+            
+            // Закрытие админ панели при клике вне
+            const adminPanel = document.getElementById('adminPanel');
+            if (adminPanel && e.target === adminPanel && adminPanel.classList.contains('active')) {
+                adminPanel.classList.remove('active');
+            }
         });
         
         // Закрытие модальных окон при нажатии Escape
@@ -2358,6 +2640,12 @@
     function loadSampleDataIfEmpty() {
         const requests = loadRequests();
         if (requests.length === 0) {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            
+            const tomorrowFormatted = `${tomorrow.getDate().toString().padStart(2, '0')}.${(tomorrow.getMonth() + 1).toString().padStart(2, '0')}.${tomorrow.getFullYear()}`;
+            
             const sampleData = [
                 {
                     id: 'MSK-001',
@@ -2366,9 +2654,10 @@
                     address: 'ул. Ленина, д. 10, кв. 25',
                     device: 'Ноутбук',
                     problem: 'Не включается, не реагирует на кнопку питания',
-                    time: '15:00-18:00',
+                    appointmentDate: tomorrowFormatted,
+                    appointmentTime: '14:00',
                     date: '15.03.2025, 14:30',
-                    status: 'completed',
+                    status: 'new',
                     timestamp: Date.now() - 86400000 * 2
                 },
                 {
@@ -2378,22 +2667,11 @@
                     address: 'пр. Мира, д. 5, кв. 12',
                     device: 'Компьютер',
                     problem: 'Медленно работает, зависает при запуске программ',
-                    time: '18:00-21:00',
+                    appointmentDate: tomorrowFormatted,
+                    appointmentTime: '16:00',
                     date: '16.03.2025, 16:45',
                     status: 'in_progress',
                     timestamp: Date.now() - 86400000
-                },
-                {
-                    id: 'MSK-003',
-                    name: 'Алексей Козлов',
-                    phone: '+7 (905) 111-22-33',
-                    address: 'Удаленная помощь',
-                    device: 'Ноутбук',
-                    problem: 'Не работает Wi-Fi, не видит сети',
-                    time: '12:00-15:00',
-                    date: '17.03.2025, 11:20',
-                    status: 'new',
-                    timestamp: Date.now()
                 }
             ];
             
@@ -2407,16 +2685,6 @@
         const cleaned = phone.replace(/[^\d+]/g, '');
         const phoneRegex = /^(\+7|7|8)\d{10}$/;
         return phoneRegex.test(cleaned);
-    }
-
-    // Получение IP пользователя (упрощенная версия)
-    function getUserIP() {
-        let userIdentifier = localStorage.getItem('userIdentifier');
-        if (!userIdentifier) {
-            userIdentifier = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('userIdentifier', userIdentifier);
-        }
-        return userIdentifier;
     }
 </script>
 </body>
