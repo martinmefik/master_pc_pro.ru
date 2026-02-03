@@ -15,17 +15,17 @@
         }
 
         :root {
-            --primary: #0a1929;
-            --secondary: #0066cc;
+            --primary: #000000;
+            --secondary: #ff4757;
             --accent: #ff4757;
-            --dark: #001e3c;
-            --darker: #000814;
-            --light: #cbd5e1;
-            --gray: #94a3b8;
-            --card-bg: rgba(19, 47, 76, 0.85);
-            --input-bg: rgba(30, 41, 59, 0.9);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            --gradient: linear-gradient(135deg, #001e3c 0%, #0a1929 50%, #0a0a2a 100%);
+            --dark: #0a0a0a;
+            --darker: #000000;
+            --light: #ffffff;
+            --gray: #888888;
+            --card-bg: rgba(20, 20, 20, 0.9);
+            --input-bg: rgba(30, 30, 30, 0.9);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            --gradient: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #111111 100%);
         }
 
         body {
@@ -50,18 +50,18 @@
             position: absolute;
             width: 100%;
             height: 130%;
-            background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            filter: brightness(0.15) contrast(1.3) saturate(1.2);
+            filter: brightness(0.3) contrast(1.2);
         }
 
         .parallax-overlay {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 8, 20, 0.95) 0%, rgba(10, 25, 41, 0.85) 50%, rgba(0, 8, 20, 0.95) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.9) 50%, rgba(0, 0, 0, 0.95) 100%);
         }
 
         /* Контент поверх параллакса */
@@ -70,18 +70,18 @@
             z-index: 1;
         }
 
-        /* Шапка */
+        /* Шапка - статичная при скролле */
         header {
-            background-color: rgba(0, 30, 60, 0.95);
+            background-color: rgba(0, 0, 0, 0.98);
             color: white;
             padding: 12px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+            border-bottom: 1px solid rgba(255, 71, 87, 0.3);
         }
 
         .header-container {
@@ -94,7 +94,7 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #ff4757;
             text-decoration: none;
@@ -102,16 +102,22 @@
             align-items: center;
             letter-spacing: 1px;
             text-transform: uppercase;
-            background: linear-gradient(90deg, #ff4757, #ff6b81);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(255, 71, 87, 0.3);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
         }
 
         .logo i {
-            margin-right: 12px;
-            font-size: 2rem;
+            margin-right: 10px;
+            font-size: 1.8rem;
             color: #ff4757;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         nav ul {
@@ -136,7 +142,7 @@
 
         nav ul li a:hover {
             color: var(--secondary);
-            background: rgba(0, 102, 204, 0.1);
+            background: rgba(255, 71, 87, 0.1);
         }
 
         .user-section {
@@ -147,7 +153,7 @@
 
         .btn-main {
             display: inline-block;
-            background: linear-gradient(135deg, var(--secondary), #0052a3);
+            background: linear-gradient(135deg, var(--secondary), #ff2e43);
             color: white;
             padding: 14px 35px;
             border-radius: 8px;
@@ -157,26 +163,26 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(0, 102, 204, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 71, 87, 0.4);
             border: 2px solid transparent;
         }
 
         .btn-main:hover {
-            background: linear-gradient(135deg, #0052a3, var(--secondary));
+            background: linear-gradient(135deg, #ff2e43, var(--secondary));
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
             border-color: rgba(255, 255, 255, 0.1);
         }
 
         /* Приветствие пользователя */
         .user-welcome {
-            background: rgba(0, 30, 60, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             color: var(--light);
             padding: 15px 0;
             text-align: center;
             margin-top: 60px;
             border-bottom: 1px solid rgba(255, 71, 87, 0.3);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             display: none;
         }
 
@@ -237,6 +243,8 @@
         .hero-content {
             max-width: 900px;
             animation: fadeInUp 1.5s ease-out;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -248,6 +256,7 @@
             background: linear-gradient(90deg, #fff, var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-align: center;
         }
 
         .hero p {
@@ -255,10 +264,11 @@
             margin-bottom: 40px;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
             color: var(--light);
+            text-align: center;
         }
 
         .work-hours {
-            background-color: rgba(19, 47, 76, 0.8);
+            background-color: rgba(20, 20, 20, 0.9);
             padding: 25px;
             border-radius: 12px;
             margin-bottom: 30px;
@@ -290,7 +300,7 @@
         }
 
         .guarantee-note {
-            background-color: rgba(0, 102, 204, 0.15);
+            background-color: rgba(255, 71, 87, 0.1);
             border-left: 4px solid var(--secondary);
             padding: 15px;
             margin: 20px 0;
@@ -340,7 +350,7 @@
 
         /* Раздел "Почему нам стоит выбрать и довериться" */
         .why-us {
-            background-color: rgba(19, 47, 76, 0.9);
+            background-color: rgba(20, 20, 20, 0.95);
         }
 
         .reasons {
@@ -351,12 +361,12 @@
         }
 
         .reason {
-            background-color: rgba(0, 30, 60, 0.7);
+            background-color: rgba(10, 10, 10, 0.8);
             padding: 35px;
             border-radius: 15px;
             text-align: center;
             transition: all 0.4s;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.05);
             height: 100%;
             display: flex;
@@ -366,7 +376,7 @@
 
         .reason:hover {
             transform: translateY(-12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
             border-color: var(--secondary);
         }
 
@@ -374,7 +384,7 @@
             font-size: 3.5rem;
             color: var(--secondary);
             margin-bottom: 25px;
-            background: rgba(0, 102, 204, 0.15);
+            background: rgba(255, 71, 87, 0.15);
             width: 80px;
             height: 80px;
             display: flex;
@@ -462,13 +472,13 @@
         }
 
         .skill-tag {
-            background: rgba(0, 102, 204, 0.2);
+            background: rgba(255, 71, 87, 0.2);
             color: var(--secondary);
             padding: 10px 20px;
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 500;
-            border: 1px solid rgba(0, 102, 204, 0.3);
+            border: 1px solid rgba(255, 71, 87, 0.3);
         }
 
         .experience {
@@ -486,7 +496,7 @@
 
         /* Отзывы */
         .reviews {
-            background-color: rgba(19, 47, 76, 0.9);
+            background-color: rgba(20, 20, 20, 0.95);
         }
 
         .review-slider {
@@ -496,7 +506,7 @@
         }
 
         .review {
-            background-color: rgba(0, 30, 60, 0.7);
+            background-color: rgba(10, 10, 10, 0.8);
             padding: 45px;
             border-radius: 15px;
             box-shadow: var(--shadow);
@@ -545,10 +555,10 @@
 
         /* Форма заявки */
         .form-container {
-            background-color: rgba(0, 30, 60, 0.85);
+            background-color: rgba(10, 10, 10, 0.9);
             padding: 50px;
             border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             max-width: 800px;
             margin: 0 auto;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -557,7 +567,7 @@
         .login-required {
             text-align: center;
             padding: 60px 40px;
-            background: rgba(0, 30, 60, 0.7);
+            background: rgba(10, 10, 10, 0.8);
             border-radius: 12px;
             border: 2px dashed rgba(255, 71, 87, 0.3);
             margin-bottom: 30px;
@@ -593,7 +603,7 @@
         }
 
         .btn-register {
-            background: linear-gradient(135deg, var(--secondary), #0052a3);
+            background: linear-gradient(135deg, var(--secondary), #ff2e43);
             color: white;
         }
 
@@ -605,7 +615,7 @@
 
         .auth-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.4);
         }
 
         .form-group {
@@ -634,7 +644,7 @@
         .form-control:focus {
             border-color: var(--secondary);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.2);
         }
 
         .form-control::placeholder {
@@ -682,7 +692,7 @@
         }
 
         .date-selection, .time-selection {
-            background-color: rgba(19, 47, 76, 0.8);
+            background-color: rgba(20, 20, 20, 0.9);
             padding: 25px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -731,7 +741,7 @@
 
         .time-slot:hover {
             border-color: var(--secondary);
-            background-color: rgba(0, 102, 204, 0.15);
+            background-color: rgba(255, 71, 87, 0.15);
             transform: translateY(-3px);
         }
 
@@ -739,7 +749,7 @@
             background-color: var(--secondary);
             color: white;
             border-color: var(--secondary);
-            box-shadow: 0 5px 20px rgba(0, 102, 204, 0.4);
+            box-shadow: 0 5px 20px rgba(255, 71, 87, 0.4);
         }
 
         .time-slot.booked {
@@ -750,14 +760,14 @@
         }
 
         .selected-datetime {
-            background-color: rgba(0, 102, 204, 0.15);
+            background-color: rgba(255, 71, 87, 0.15);
             padding: 20px;
             border-radius: 8px;
             margin-top: 25px;
             text-align: center;
             font-weight: 600;
             color: var(--secondary);
-            border: 1px solid rgba(0, 102, 204, 0.3);
+            border: 1px solid rgba(255, 71, 87, 0.3);
             font-size: 1.1rem;
         }
 
@@ -772,12 +782,12 @@
             transition: color 0.3s;
             padding: 10px 20px;
             border-radius: 6px;
-            background: rgba(0, 102, 204, 0.1);
+            background: rgba(255, 71, 87, 0.1);
         }
 
         .back-to-main:hover {
             color: var(--light);
-            background: rgba(0, 102, 204, 0.2);
+            background: rgba(255, 71, 87, 0.2);
             text-decoration: none;
         }
 
@@ -785,24 +795,24 @@
             margin-right: 10px;
         }
 
-        /* Админ панель */
+        /* Админ панель на полный экран */
         .admin-panel {
             position: fixed;
             top: 0;
-            right: -500px;
-            width: 500px;
-            height: 100vh;
-            background-color: var(--dark);
-            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.98);
             z-index: 2000;
-            transition: right 0.5s ease;
-            padding: 25px;
+            padding: 20px;
             overflow-y: auto;
-            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            display: none;
+            border-top: 3px solid var(--secondary);
         }
 
         .admin-panel.active {
-            right: 0;
+            display: block;
+            animation: slideIn 0.3s ease;
         }
 
         .admin-header {
@@ -817,17 +827,45 @@
         .admin-header h2 {
             color: var(--secondary);
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
 
-        .admin-login {
-            max-width: 450px;
-            margin: 100px auto;
-            padding: 50px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .close-admin {
+            background: transparent;
+            border: none;
+            color: var(--light);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 71, 87, 0.1);
+        }
+
+        .close-admin:hover {
+            color: var(--secondary);
+            background: rgba(255, 71, 87, 0.2);
+        }
+
+        .admin-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .admin-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .admin-table-container {
+            overflow-x: auto;
         }
 
         .admin-table {
@@ -835,6 +873,7 @@
             border-collapse: collapse;
             margin-top: 20px;
             font-size: 0.9rem;
+            min-width: 800px;
         }
 
         .admin-table th, .admin-table td {
@@ -845,17 +884,35 @@
         }
 
         .admin-table th {
-            background-color: rgba(0, 102, 204, 0.25);
+            background-color: rgba(255, 71, 87, 0.25);
             color: var(--secondary);
             font-weight: 600;
         }
 
         .admin-table tr:nth-child(even) {
-            background-color: rgba(19, 47, 76, 0.5);
+            background-color: rgba(20, 20, 20, 0.7);
         }
 
         .admin-table tr:hover {
-            background-color: rgba(0, 102, 204, 0.15);
+            background-color: rgba(255, 71, 87, 0.15);
+        }
+
+        .map-container {
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: var(--shadow);
+        }
+
+        .map-placeholder {
+            height: 100%;
+            background: rgba(20, 20, 20, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 1.1rem;
         }
 
         /* Модальные окна */
@@ -866,7 +923,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 8, 20, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 3000;
             align-items: center;
             justify-content: center;
@@ -888,7 +945,7 @@
             position: relative;
             animation: modalFadeIn 0.5s;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
         }
 
         .close-modal {
@@ -961,16 +1018,27 @@
         /* Мои заявки */
         .my-requests {
             min-height: 500px;
+            text-align: center;
+        }
+
+        .my-requests-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .request-card {
-            background-color: rgba(0, 30, 60, 0.7);
+            background-color: rgba(10, 10, 10, 0.8);
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
             border-left: 6px solid var(--secondary);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
         }
 
         .request-status {
@@ -983,7 +1051,7 @@
         }
 
         .status-new {
-            background: linear-gradient(135deg, var(--secondary), #0052a3);
+            background: linear-gradient(135deg, var(--secondary), #ff2e43);
             color: white;
         }
 
@@ -1025,6 +1093,17 @@
             }
         }
 
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -1038,7 +1117,7 @@
 
         /* Футер */
         footer {
-            background-color: rgba(0, 30, 60, 0.95);
+            background-color: rgba(0, 0, 0, 0.98);
             color: white;
             padding: 70px 20px 35px;
             margin-top: 100px;
@@ -1112,10 +1191,6 @@
             .master, .reasons {
                 flex-direction: column;
             }
-            .admin-panel {
-                width: 100%;
-                right: -100%;
-            }
             .user-welcome-content {
                 flex-direction: column;
                 gap: 15px;
@@ -1166,6 +1241,12 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            .admin-content {
+                grid-template-columns: 1fr;
+            }
+            .map-container {
+                height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1179,7 +1260,7 @@
                 padding: 20px;
             }
             .logo {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             .section-title {
                 font-size: 2rem;
@@ -1200,7 +1281,10 @@
     <!-- Шапка сайта -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo"><i class="fas fa-laptop-code"></i> MSK REPAIR PC</a>
+            <a href="#" class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span class="logo-text">MSK REPAIR PC</span>
+            </a>
             <nav>
                 <ul>
                     <li><a href="#why-us">Почему нам доверяют</a></li>
@@ -1221,9 +1305,6 @@
         <div class="user-welcome-content">
             <div class="user-welcome-text">
                 Добро пожаловать, <span id="usernameDisplay"></span>!
-            </div>
-            <div class="user-actions">
-                <button id="logoutBtn" class="btn-logout">Выйти из аккаунта</button>
             </div>
         </div>
     </div>
@@ -1262,7 +1343,7 @@
                             <li>Срочный выезд в течение 40 минут</li>
                             <li>Диагностика за 15 минут бесплатно</li>
                             <li>90% ремонтов выполняется на месте</li>
-                            <li>Круглосуточная техническая поддержка</li>
+                            <li>Работаем в удобное для вас время</li>
                         </ul>
                     </div>
                 </div>
@@ -1327,7 +1408,7 @@
                             <li>Работаем в удобное для вас время</li>
                             <li>Бесплатная консультация после ремонта</li>
                             <li>Система скидок для постоянных клиентов</li>
-                            <li>Обратная связь 24/7</li>
+                            <li>Быстрая обратная связь</li>
                         </ul>
                     </div>
                 </div>
@@ -1454,8 +1535,8 @@
                         </div>
                         <div class="form-group">
                             <label for="problem">Описание проблемы *</label>
-                            <textarea id="problem" class="form-control" rows="6" required placeholder="Подробно опишите проблему с вашим устройством. Максимум 1000 слов." maxlength="7000"></textarea>
-                            <div class="word-count">Осталось символов: <span id="charCount">7000</span></div>
+                            <textarea id="problem" class="form-control" rows="6" required placeholder="Подробно опишите проблему с вашим устройством. Максимум 1000 слов." maxlength="1000"></textarea>
+                            <div class="word-count">Осталось символов: <span id="charCount">1000</span></div>
                         </div>
                         <button type="submit" class="btn-main" style="width:100%;">Создать заявку</button>
                     </form>
@@ -1465,7 +1546,10 @@
 
         <!-- Раздел "Мои заявки" -->
         <section id="my-requests" class="my-requests fade-in" style="display:none;">
-            <a href="#" id="backToMain" class="back-to-main"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+            <div class="my-requests-header">
+                <a href="#" id="backToMain" class="back-to-main"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
+                <button id="logoutBtn" class="btn-logout">Выйти из аккаунта</button>
+            </div>
             <h2 class="section-title">Мои заявки</h2>
             <div id="requestsList">
                 <!-- Заявки будут загружаться здесь -->
@@ -1574,36 +1658,60 @@
         </div>
     </div>
 
-    <!-- Админ панель (скрытая) -->
+    <!-- Админ панель на полный экран -->
     <div id="adminPanel" class="admin-panel">
         <div class="admin-header">
             <h2><i class="fas fa-cogs"></i> Админ панель MSK REPAIR PC</h2>
-            <button id="closeAdmin" class="btn-main" style="padding: 10px 20px; font-size: 0.9rem;">Закрыть</button>
+            <button class="close-admin" id="closeAdmin">&times;</button>
         </div>
-        <div class="work-hours">
-            <h3>Управление временными слотами</h3>
+        
+        <div class="admin-content">
             <div>
-                <label for="adminDateFilter" style="color: var(--light);">Фильтр по дате:</label>
-                <input type="text" id="adminDateFilter" class="flatpickr-input" placeholder="Выберите дату">
+                <div class="work-hours">
+                    <h3>Управление заявками</h3>
+                    <div>
+                        <label for="adminDateFilter" style="color: var(--light);">Фильтр по дате:</label>
+                        <input type="text" id="adminDateFilter" class="flatpickr-input" placeholder="Выберите дату">
+                    </div>
+                </div>
+                
+                <div class="admin-table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Имя</th>
+                                <th>Телефон</th>
+                                <th>Email</th>
+                                <th>Дата и время</th>
+                                <th>Адрес</th>
+                                <th>Статус</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminRequestsTable">
+                            <!-- Заявки будут загружаться здесь -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div>
+                <div class="work-hours">
+                    <h3>Карта с адресом клиента</h3>
+                    <p>Выберите заявку для отображения адреса на карте</p>
+                </div>
+                
+                <div class="map-container">
+                    <div id="yandexMap" class="map-placeholder">
+                        <div style="text-align: center; padding: 20px;">
+                            <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: var(--secondary); margin-bottom: 15px;"></i>
+                            <p>Выберите заявку для отображения адреса</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <table class="admin-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Имя</th>
-                    <th>Телефон</th>
-                    <th>Email</th>
-                    <th>Дата и время</th>
-                    <th>Адрес</th>
-                    <th>Статус</th>
-                    <th>Действия</th>
-                </tr>
-            </thead>
-            <tbody id="adminRequestsTable">
-                <!-- Заявки будут загружаться здесь -->
-            </tbody>
-        </table>
     </div>
 
     <!-- Админ логин -->
@@ -1627,6 +1735,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU" type="text/javascript"></script>
     <script>
         // Имитация базы данных в localStorage
         const DB = {
@@ -1835,6 +1944,9 @@
         let selectedDate = null;
         let selectedTime = null;
         let flatpickrInstance = null;
+        let ymaps = null;
+        let yandexMap = null;
+        let selectedRequestForMap = null;
 
         // Инициализация при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
@@ -1867,6 +1979,9 @@
             
             // Обновление интерфейса в зависимости от авторизации
             updateRequestFormVisibility();
+            
+            // Инициализация Яндекс Карт
+            initYandexMaps();
         });
 
         // Инициализация календаря
@@ -1909,6 +2024,24 @@
             
             // Генерация временных слотов
             updateTimeSlots();
+        }
+
+        // Инициализация Яндекс Карт
+        function initYandexMaps() {
+            if (typeof ymaps !== 'undefined') {
+                ymaps.ready(function() {
+                    // Создаем карту
+                    yandexMap = new ymaps.Map('yandexMap', {
+                        center: [55.751574, 37.573856], // Москва
+                        zoom: 10,
+                        controls: ['zoomControl', 'fullscreenControl']
+                    });
+                    
+                    console.log('Яндекс Карты инициализированы');
+                });
+            } else {
+                console.log('Яндекс Карты не загружены. Проверьте API ключ.');
+            }
         }
 
         // Обновление видимости формы заявки
@@ -2090,7 +2223,7 @@
                 hideMyRequests();
             });
             
-            // Кнопка выхода из аккаунта
+            // Кнопка выхода из аккаунта (теперь в разделе "Мои заявки")
             document.getElementById('logoutBtn').addEventListener('click', function() {
                 logoutUser();
             });
@@ -2266,7 +2399,7 @@
                 
                 // Очистка формы
                 document.getElementById('requestForm').reset();
-                document.getElementById('charCount').textContent = '7000';
+                document.getElementById('charCount').textContent = '1000';
                 selectedTime = null;
                 updateTimeSlots();
                 updateSelectedDateTimeDisplay();
@@ -2294,9 +2427,9 @@
                 }
             });
             
-            // Счетчик символов
+            // Счетчик символов (теперь 1000 вместо 7000)
             document.getElementById('problem').addEventListener('input', function() {
-                const maxLength = 7000;
+                const maxLength = 1000;
                 const currentLength = this.value.length;
                 document.getElementById('charCount').textContent = maxLength - currentLength;
                 
@@ -2320,6 +2453,11 @@
                     document.getElementById('authModal').classList.add('active');
                     showTab('login');
                 }
+            });
+            
+            // Закрытие админ панели
+            document.getElementById('closeAdmin').addEventListener('click', function() {
+                document.getElementById('adminPanel').classList.remove('active');
             });
             
             // Скрытая админ панель (доступ по тройному клику на логотип)
@@ -2364,10 +2502,6 @@
                 document.getElementById('successModal').classList.remove('active');
             });
             
-            document.getElementById('closeAdmin').addEventListener('click', function() {
-                document.getElementById('adminPanel').classList.remove('active');
-            });
-            
             document.getElementById('closeAdminLogin').addEventListener('click', function() {
                 document.getElementById('adminLoginModal').classList.remove('active');
             });
@@ -2385,10 +2519,6 @@
                         document.getElementById('loginError').style.display = 'none';
                     }
                 });
-                
-                if (e.target === document.getElementById('adminPanel')) {
-                    document.getElementById('adminPanel').classList.remove('active');
-                }
             });
             
             // Плавная прокрутка к якорям
@@ -2484,10 +2614,12 @@
             
             // Показать раздел с заявками
             document.getElementById('my-requests').style.display = 'block';
-            document.getElementById('my-requests').scrollIntoView({ behavior: 'smooth' });
             
             // Загрузить заявки пользователя
             loadUserRequests();
+            
+            // Прокрутить к верху страницы
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // Скрыть раздел с заявками и показать все остальное
@@ -2558,7 +2690,7 @@
             requestsList.innerHTML = html;
         }
 
-        // Отмена заявки
+        // Отмена заявки (синхронизация с админом)
         window.cancelRequest = function(requestId, appointmentDate, appointmentTime) {
             if (confirm('Вы уверены, что хотите отменить эту заявку?')) {
                 if (DB.updateRequest(requestId, { status: 'cancelled' })) {
@@ -2606,8 +2738,6 @@
                 }[request.status] || request.status;
                 
                 const date = new Date(request.createdAt).toLocaleString('ru-RU');
-                const problemShort = request.problem.length > 50 ? 
-                    request.problem.substring(0, 50) + '...' : request.problem;
                 
                 html += `
                 <tr>
@@ -2619,8 +2749,9 @@
                     <td>${request.address}</td>
                     <td>${statusText}</td>
                     <td>
+                        <button onclick="adminShowOnMap('${request.id}', '${request.address}')" style="padding:5px 10px; background:#3498db; color:white; border:none; border-radius:4px; cursor:pointer; margin-bottom:5px;">На карте</button>
                         ${request.status === 'new' || request.status === 'in_progress' ? 
-                          `<button onclick="adminCancelRequest('${request.id}', '${request.appointmentDate}', '${request.appointmentTime}')" style="padding:5px 10px; background:#ff4757; color:white; border:none; border-radius:4px; cursor:pointer;">Отменить</button>` : 
+                          `<button onclick="adminCancelRequest('${request.id}', '${request.appointmentDate}', '${request.appointmentTime}', '${request.username}')" style="padding:5px 10px; background:#ff4757; color:white; border:none; border-radius:4px; cursor:pointer;">Отменить запись</button>` : 
                           ''}
                         ${request.status === 'new' ? 
                           `<button onclick="adminStartRequest('${request.id}')" style="padding:5px 10px; background:var(--secondary); color:white; border:none; border-radius:4px; cursor:pointer; margin-left:5px;">В работу</button>` : 
@@ -2636,9 +2767,56 @@
             tableBody.innerHTML = html;
         }
 
-        // Действия админа с заявками
-        window.adminCancelRequest = function(requestId, appointmentDate, appointmentTime) {
-            if (confirm('Отменить эту заявку?')) {
+        // Показать адрес на карте
+        window.adminShowOnMap = function(requestId, address) {
+            if (!address || address === 'Удаленно') {
+                alert('Для этой заявки адрес не указан (удаленная работа)');
+                return;
+            }
+            
+            selectedRequestForMap = requestId;
+            
+            if (typeof ymaps !== 'undefined' && yandexMap) {
+                // Используем геокодирование Яндекс Карт
+                ymaps.geocode(address, {
+                    results: 1
+                }).then(function (res) {
+                    const firstGeoObject = res.geoObjects.get(0);
+                    
+                    if (firstGeoObject) {
+                        const coordinates = firstGeoObject.geometry.getCoordinates();
+                        yandexMap.setCenter(coordinates, 15);
+                        
+                        // Очищаем предыдущие метки
+                        yandexMap.geoObjects.removeAll();
+                        
+                        // Добавляем новую метку
+                        const placemark = new ymaps.Placemark(coordinates, {
+                            hintContent: address,
+                            balloonContent: `Заявка ID: ${requestId.substring(0, 8)}<br>Адрес: ${address}`
+                        }, {
+                            preset: 'islands#redIcon'
+                        });
+                        
+                        yandexMap.geoObjects.add(placemark);
+                        
+                        // Открываем балун с информацией
+                        placemark.balloon.open();
+                    } else {
+                        alert('Не удалось найти указанный адрес на карте');
+                    }
+                }).catch(function(error) {
+                    console.error('Ошибка геокодирования:', error);
+                    alert('Ошибка при поиске адреса на карте');
+                });
+            } else {
+                alert('Карты не загружены. Проверьте подключение к интернету и API ключ Яндекс Карт.');
+            }
+        };
+
+        // Действия админа с заявками (с синхронизацией с клиентом)
+        window.adminCancelRequest = function(requestId, appointmentDate, appointmentTime, username) {
+            if (confirm('Отменить эту заявку? Клиент будет уведомлен об отмене.')) {
                 DB.updateRequest(requestId, { status: 'cancelled' });
                 
                 // Освобождаем слот
@@ -2648,6 +2826,11 @@
                 
                 loadAdminRequests();
                 updateTimeSlots();
+                
+                // Синхронизация: если пользователь сейчас в разделе "Мои заявки", обновляем его список
+                if (currentUser && currentUser.username === username && document.getElementById('my-requests').style.display !== 'none') {
+                    loadUserRequests();
+                }
             }
         };
 
