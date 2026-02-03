@@ -15,17 +15,20 @@
         }
 
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #1a252f;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --primary: #1a1a2e;
+            --secondary: #0ea5e9;
+            --accent: #f97316;
+            --dark: #0f172a;
+            --darker: #0a0a1a;
+            --light: #e2e8f0;
+            --gray: #64748b;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --card-bg: rgba(30, 41, 59, 0.7);
         }
 
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            background-color: var(--darker);
+            color: var(--light);
             overflow-x: hidden;
             line-height: 1.6;
         }
@@ -48,14 +51,14 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            filter: brightness(0.4);
+            filter: brightness(0.2) contrast(1.2);
         }
 
         .parallax-overlay {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+            background: linear-gradient(to bottom, rgba(10, 10, 26, 0.9) 0%, rgba(26, 26, 46, 0.7) 50%, rgba(10, 10, 26, 0.9) 100%);
         }
 
         /* Контент поверх параллакса */
@@ -66,14 +69,15 @@
 
         /* Шапка */
         header {
-            background-color: rgba(44, 62, 80, 0.95);
+            background-color: rgba(15, 23, 42, 0.95);
             color: white;
-            padding: 20px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .header-container {
@@ -88,14 +92,15 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: white;
+            color: var(--secondary);
             text-decoration: none;
             display: flex;
             align-items: center;
+            white-space: nowrap;
         }
 
         .logo i {
-            color: #3498db;
+            color: var(--secondary);
             margin-right: 10px;
         }
 
@@ -105,29 +110,39 @@
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
 
         nav ul li a {
-            color: white;
+            color: var(--light);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
             font-size: 1.1rem;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
-            color: #3498db;
+            color: var(--secondary);
         }
 
         .user-section {
             display: flex;
             align-items: center;
+            gap: 15px;
+            flex-wrap: nowrap;
+            min-width: 200px;
+            justify-content: flex-end;
         }
 
         .user-greeting {
-            margin-right: 15px;
             font-weight: 500;
+            color: var(--secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+            font-size: 0.95rem;
         }
 
         /* Главный экран */
@@ -149,22 +164,24 @@
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
             line-height: 1.2;
+            color: white;
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 40px;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+            color: var(--light);
         }
 
         .btn-main {
             display: inline-block;
-            background-color: #3498db;
+            background: linear-gradient(135deg, var(--secondary), #0284c7);
             color: white;
-            padding: 15px 40px;
+            padding: 16px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -172,31 +189,35 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+            border: 2px solid transparent;
         }
 
         .btn-main:hover {
-            background-color: #2980b9;
+            background: linear-gradient(135deg, #0284c7, var(--secondary));
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.6);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         /* Основные разделы */
         section {
             padding: 100px 20px;
-            background-color: white;
+            background-color: var(--card-bg);
             margin-bottom: 10px;
             box-shadow: var(--shadow);
-            border-radius: 10px;
+            border-radius: 15px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 60px;
-            color: var(--primary);
+            color: var(--secondary);
             font-size: 2.5rem;
             position: relative;
         }
@@ -206,7 +227,7 @@
             position: absolute;
             width: 100px;
             height: 4px;
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--secondary), transparent);
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
@@ -215,7 +236,7 @@
 
         /* Раздел "Почему нам стоит выбрать и довериться" */
         .why-us {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(30, 41, 59, 0.8);
         }
 
         .reasons {
@@ -226,17 +247,19 @@
         }
 
         .reason {
-            background-color: var(--light);
+            background-color: rgba(15, 23, 42, 0.7);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .reason:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: var(--secondary);
         }
 
         .reason i {
@@ -247,7 +270,12 @@
 
         .reason h3 {
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--light);
+            font-size: 1.4rem;
+        }
+
+        .reason p {
+            color: var(--gray);
         }
 
         /* Мастер Андрей */
@@ -258,54 +286,39 @@
             gap: 50px;
         }
 
-        .master-img {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .master-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-
-        .master-img:hover img {
-            transform: scale(1.05);
-        }
-
         .master-info {
             flex: 1;
             min-width: 300px;
         }
 
         .master-info h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
+            color: var(--secondary);
+            margin-bottom: 25px;
             font-size: 2.2rem;
         }
 
         .master-info p {
             margin-bottom: 15px;
             font-size: 1.1rem;
+            color: var(--light);
+            line-height: 1.7;
         }
 
         .experience {
-            background-color: var(--secondary);
+            background: linear-gradient(135deg, var(--accent), #ea580c);
             color: white;
             display: inline-block;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
-            margin-top: 20px;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(249, 115, 22, 0.3);
         }
 
         /* Отзывы */
         .reviews {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(30, 41, 59, 0.8);
         }
 
         .review-slider {
@@ -315,12 +328,13 @@
         }
 
         .review {
-            background-color: var(--light);
+            background-color: rgba(15, 23, 42, 0.7);
             padding: 40px;
             border-radius: 15px;
             box-shadow: var(--shadow);
             margin-bottom: 30px;
             position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .review:before {
@@ -331,36 +345,43 @@
             font-size: 5rem;
             color: var(--secondary);
             font-family: Georgia, serif;
-            opacity: 0.3;
+            opacity: 0.2;
+        }
+
+        .review p {
+            color: var(--light);
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
         .review-author {
             display: flex;
             align-items: center;
-            margin-top: 20px;
-        }
-
-        .review-author img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .review-author-info h4 {
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .review-author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
         }
 
         /* Форма заявки */
         .form-container {
-            background-color: white;
+            background-color: rgba(15, 23, 42, 0.8);
             padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             max-width: 800px;
             margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .form-group {
@@ -371,21 +392,28 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--light);
         }
 
         .form-control {
             width: 100%;
             padding: 15px;
-            border: 2px solid #ddd;
+            background-color: rgba(30, 41, 59, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            color: var(--light);
         }
 
         .form-control:focus {
             border-color: var(--secondary);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: var(--gray);
         }
 
         .checkbox-group {
@@ -398,26 +426,61 @@
             margin-right: 10px;
             width: 20px;
             height: 20px;
+            accent-color: var(--secondary);
+        }
+
+        .checkbox-group label {
+            color: var(--light);
+            margin-bottom: 0;
         }
 
         .word-count {
             text-align: right;
             font-size: 0.9rem;
-            color: #666;
+            color: var(--gray);
             margin-top: 5px;
         }
 
         .work-hours {
-            background-color: #f8f9fa;
-            padding: 20px;
+            background-color: rgba(30, 41, 59, 0.7);
+            padding: 25px;
             border-radius: 10px;
             margin-bottom: 30px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .work-hours h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .work-hours p {
+            color: var(--light);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .work-hours .note {
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        .guarantee-note {
+            background-color: rgba(249, 115, 22, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .guarantee-note p {
+            color: var(--light);
+            margin: 5px 0;
+            font-size: 0.95rem;
         }
 
         /* Календарь и выбор времени */
@@ -435,19 +498,31 @@
         }
 
         .date-selection, .time-selection {
-            background-color: #f8f9fa;
-            padding: 20px;
+            background-color: rgba(30, 41, 59, 0.7);
+            padding: 25px;
             border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .date-selection h3, .time-selection h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
 
         .flatpickr-input {
             width: 100%;
             padding: 15px;
-            border: 2px solid #ddd;
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             font-size: 1rem;
-            background-color: white;
+            color: var(--light);
             cursor: pointer;
+        }
+
+        .flatpickr-input::placeholder {
+            color: var(--gray);
         }
 
         .time-slots {
@@ -460,92 +535,143 @@
         .time-slot {
             padding: 12px 5px;
             text-align: center;
-            background-color: white;
-            border: 2px solid #ddd;
+            background-color: rgba(15, 23, 42, 0.7);
+            border: 2px solid rgba(255, 255, 255, 0.1);
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s;
             font-weight: 500;
+            color: var(--light);
         }
 
         .time-slot:hover {
             border-color: var(--secondary);
-            background-color: #f0f8ff;
+            background-color: rgba(14, 165, 233, 0.1);
+            transform: translateY(-2px);
         }
 
         .time-slot.selected {
             background-color: var(--secondary);
             color: white;
             border-color: var(--secondary);
+            box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
         }
 
         .time-slot.disabled {
-            background-color: #f5f5f5;
-            color: #999;
+            background-color: rgba(30, 41, 59, 0.5);
+            color: var(--gray);
             cursor: not-allowed;
-            border-color: #eee;
+            border-color: rgba(255, 255, 255, 0.05);
         }
 
         .time-slot.booked {
-            background-color: #ffebee;
-            color: #e53935;
+            background-color: rgba(220, 38, 38, 0.1);
+            color: #ef4444;
             cursor: not-allowed;
-            border-color: #ffcdd2;
+            border-color: rgba(239, 68, 68, 0.2);
         }
 
         .selected-datetime {
-            background-color: #e3f2fd;
-            padding: 15px;
+            background-color: rgba(14, 165, 233, 0.1);
+            padding: 20px;
             border-radius: 8px;
             margin-top: 20px;
             text-align: center;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--secondary);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        /* Кнопка возврата */
+        .back-to-main {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .back-to-main:hover {
+            color: var(--light);
+            text-decoration: underline;
+        }
+
+        .back-to-main i {
+            margin-right: 8px;
         }
 
         /* Админ панель */
         .admin-panel {
             position: fixed;
             top: 0;
-            right: -400px;
-            width: 400px;
+            right: -450px;
+            width: 450px;
             height: 100vh;
-            background-color: white;
-            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+            background-color: var(--dark);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.4);
             z-index: 2000;
             transition: right 0.5s ease;
-            padding: 20px;
+            padding: 25px;
             overflow-y: auto;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .admin-panel.active {
             right: 0;
         }
 
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .admin-header h2 {
+            color: var(--secondary);
+            margin: 0;
+        }
+
         .admin-login {
             max-width: 400px;
             margin: 100px auto;
             padding: 40px;
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .admin-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            font-size: 0.9rem;
         }
 
         .admin-table th, .admin-table td {
             padding: 12px;
-            border: 1px solid #ddd;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: left;
+            color: var(--light);
         }
 
         .admin-table th {
-            background-color: var(--primary);
-            color: white;
+            background-color: rgba(14, 165, 233, 0.2);
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .admin-table tr:nth-child(even) {
+            background-color: rgba(30, 41, 59, 0.5);
+        }
+
+        .admin-table tr:hover {
+            background-color: rgba(14, 165, 233, 0.1);
         }
 
         /* Модальные окна */
@@ -556,10 +682,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             z-index: 3000;
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(5px);
         }
 
         .modal.active {
@@ -567,7 +694,7 @@
         }
 
         .modal-content {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 40px;
             border-radius: 15px;
             max-width: 500px;
@@ -576,6 +703,8 @@
             overflow-y: auto;
             position: relative;
             animation: modalFadeIn 0.5s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
         }
 
         .close-modal {
@@ -584,7 +713,12 @@
             right: 20px;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #777;
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--secondary);
         }
 
         /* Мои заявки */
@@ -593,17 +727,18 @@
         }
 
         .request-card {
-            background-color: var(--light);
+            background-color: rgba(15, 23, 42, 0.7);
             padding: 25px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             border-left: 5px solid var(--secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .request-status {
             display: inline-block;
-            padding: 5px 15px;
+            padding: 8px 20px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 600;
@@ -611,22 +746,22 @@
         }
 
         .status-new {
-            background-color: #3498db;
+            background-color: var(--secondary);
             color: white;
         }
 
         .status-in-progress {
-            background-color: #f39c12;
+            background-color: var(--accent);
             color: white;
         }
 
         .status-completed {
-            background-color: #27ae60;
+            background-color: #10b981;
             color: white;
         }
 
         .status-cancelled {
-            background-color: #e74c3c;
+            background-color: #ef4444;
             color: white;
         }
 
@@ -670,6 +805,7 @@
             color: white;
             padding: 60px 20px 30px;
             margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-content {
@@ -685,6 +821,7 @@
             font-size: 1.3rem;
             position: relative;
             padding-bottom: 10px;
+            color: var(--secondary);
         }
 
         .footer-section h3:after {
@@ -692,7 +829,7 @@
             position: absolute;
             width: 50px;
             height: 3px;
-            background-color: var(--secondary);
+            background: linear-gradient(90deg, var(--secondary), transparent);
             bottom: 0;
             left: 0;
         }
@@ -711,6 +848,7 @@
             margin-right: 10px;
             color: var(--secondary);
             margin-top: 5px;
+            min-width: 20px;
         }
 
         .copyright {
@@ -718,10 +856,22 @@
             margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--gray);
         }
 
         /* Адаптивность */
+        @media (max-width: 1200px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+            .user-section {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero h1 {
                 font-size: 2.8rem;
@@ -738,6 +888,7 @@
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
+                text-align: center;
             }
             nav ul {
                 margin-top: 20px;
@@ -761,6 +912,22 @@
             }
             .time-slots {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .user-section {
+                margin-top: 10px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .time-slots {
+                grid-template-columns: 1fr;
+            }
+            .datetime-selection {
+                gap: 20px;
+            }
+            .date-selection, .time-selection {
+                padding: 20px;
             }
         }
     </style>
@@ -787,7 +954,7 @@
             </nav>
             <div class="user-section">
                 <span id="userGreeting" class="user-greeting"></span>
-                <button id="loginBtn" class="btn-main">Войти</button>
+                <button id="loginBtn" class="btn-main" style="padding: 12px 25px; font-size: 1rem;">Войти</button>
             </div>
         </div>
     </header>
@@ -802,6 +969,13 @@
                 <div class="work-hours">
                     <h3>График работы:</h3>
                     <p>Пн-Пт: 12:00 - 23:00 | Сб-Вс: 13:00 - 22:00</p>
+                    <p class="note">Выезд мастера осуществляться на территории города Москва</p>
+                    <p class="note">За обращениями из Московской области, нужно позвонить по телефону</p>
+                    <div class="guarantee-note">
+                        <p><strong>Гарантия на работу:</strong></p>
+                        <p>• На небольшую работу - до 14 дней</p>
+                        <p>• На более серьезную работу - 30 дней</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -813,17 +987,17 @@
                 <div class="reason">
                     <i class="fas fa-clock"></i>
                     <h3>Быстрая помощь</h3>
-                    <p>Среднее время выезда - 1-2 часа. Удаленная помощь в течение 15-30 минут после обращения.</p>
+                    <p>Среднее время выезда - 30-40 минут. Удаленная помощь в течение 15-30 минут после обращения.</p>
                 </div>
                 <div class="reason">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Гарантия качества</h3>
-                    <p>Гарантия на все виды работ до 2 лет. Используем только качественные комплектующие.</p>
+                    <p>Гарантия на все виды работ до 30 дней. Используем только качественные комплектующие.</p>
                 </div>
                 <div class="reason">
                     <i class="fas fa-tools"></i>
-                    <h3>Опытные специалисты</h3>
-                    <p>Мастера с опытом работы от 8 лет. Решаем любые проблемы от простых до самых сложных.</p>
+                    <h3>Мастер с большим опытом работы</h3>
+                    <p>Опытный мастер с 2-летним стажем. Решаем любые проблемы от простых до самых сложных.</p>
                 </div>
                 <div class="reason">
                     <i class="fas fa-ruble-sign"></i>
@@ -836,17 +1010,13 @@
         <!-- Раздел о мастере -->
         <section id="master" class="fade-in">
             <div class="master">
-                <div class="master-img">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Мастер Андрей">
-                </div>
                 <div class="master-info">
                     <h2>Андрей - профессионал своего дела</h2>
-                    <p>Опытный мастер с 12-летним стажем работы в сфере ремонта и обслуживания компьютерной техники.</p>
+                    <p>Опытный мастер с 2-летним стажем работы в сфере ремонта и обслуживания компьютерной техники.</p>
                     <p>Специализируюсь на диагностике и ремонте ноутбуков, компьютеров, моноблоков всех производителей.</p>
-                    <p>Имею сертификаты от ведущих производителей техники: ASUS, HP, Dell, Lenovo, Apple.</p>
-                    <p>За годы работы успешно выполнил более 2500 заказов, как на выезде, так и удаленно.</p>
+                    <p>За годы работы успешно выполнил более 500 заказов, как на выезде, так и удаленно.</p>
                     <p>Постоянно совершенствую свои знания и навыки, слежу за новинками в мире компьютерных технологий.</p>
-                    <div class="experience">12 лет успешной работы</div>
+                    <div class="experience">2 года успешной работы</div>
                 </div>
             </div>
         </section>
@@ -856,32 +1026,29 @@
             <h2 class="section-title">Отзывы клиентов</h2>
             <div class="review-slider">
                 <div class="review">
-                    <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение полутора часов, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 2 года на работу. Отдельно хочу отметить вежливость и профессионализм - все объяснил, показал, дал рекомендации по эксплуатации. Теперь только к нему буду обращаться и всем рекомендую!</p>
+                    <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение 40 минут, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 14 дней на работу. Отдельно хочу отметить вежливость и профессионализм - все объяснил, показал, дал рекомендации по эксплуатации. Теперь только к нему буду обращаться и всем рекомендую!</p>
                     <div class="review-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Дмитрий">
                         <div class="review-author-info">
-                            <h4>Дмитрий Смирнов</h4>
-                            <p>Клиент с июня 2022</p>
+                            <h4>Сергей Волков</h4>
+                            <p>Клиент с января 2025</p>
                         </div>
                     </div>
                 </div>
                 <div class="review">
                     <p>Работаю удаленно, и когда сломался ноутбук, это была катастрофа. Андрей помог удаленно за 40 минут - проблема была в вирусах и забитой системе. Не только все починил, но и настроил резервное копирование, показал, как избежать подобных проблем в будущем. Стоимость услуги была абсолютно адекватной, а результат превзошел ожидания. Спасибо огромное за спасенный дедлайн и нервы!</p>
                     <div class="review-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Анна">
                         <div class="review-author-info">
-                            <h4>Анна Ковалева</h4>
-                            <p>Клиент с марта 2023</p>
+                            <h4>Мария Соколова</h4>
+                            <p>Клиент с марта 2025</p>
                         </div>
                     </div>
                 </div>
                 <div class="review">
                     <p>У меня сложилось самое лучшее впечатление от работы мастера. Компьютер начал сильно греться и выключаться. Андрей приехал, тщательно все проверил, почистил от пыли, заменил термопасту, настроил систему охлаждения. Работал аккуратно, на столе после него не осталось ни соринки. Цена была озвучена заранее и не изменилась. Компьютер теперь работает как новый, даже лучше, чем после покупки. Обязательно буду рекомендовать знакомым!</p>
                     <div class="review-author">
-                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Игорь">
                         <div class="review-author-info">
-                            <h4>Игорь Петров</h4>
-                            <p>Клиент с января 2023</p>
+                            <h4>Алексей Морозов</h4>
+                            <p>Клиент с февраля 2025</p>
                         </div>
                     </div>
                 </div>
@@ -895,6 +1062,7 @@
                 <div class="work-hours">
                     <h3>Интервал записи: 2 часа</h3>
                     <p>Выберите удобное время в рабочее время мастерской</p>
+                    <p class="note">Максимально можно записаться на месяц вперед</p>
                 </div>
                 
                 <!-- Выбор даты и времени -->
@@ -944,6 +1112,7 @@
 
         <!-- Раздел "Мои заявки" -->
         <section id="my-requests" class="my-requests fade-in" style="display:none;">
+            <a href="#" id="backToMain" class="back-to-main"><i class="fas fa-arrow-left"></i> Вернуться на главную</a>
             <h2 class="section-title">Мои заявки</h2>
             <div id="requestsList">
                 <!-- Заявки будут загружаться здесь -->
@@ -956,8 +1125,8 @@
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</li>
-                        <li><i class="fas fa-envelope"></i> master@computer-repair.ru</li>
+                        <li><i class="fas fa-phone"></i> +7 (977) 477-05-87</li>
+                        <li><i class="fas fa-envelope"></i> mskrepairpc@gmail.com</li>
                         <li><i class="fab fa-telegram"></i> Telegram: @Official_partner_of_Skoda</li>
                     </ul>
                 </div>
@@ -966,7 +1135,7 @@
                     <ul class="contact-info">
                         <li><i class="fas fa-calendar-alt"></i> Пн-Пт: 12:00 - 23:00</li>
                         <li><i class="fas fa-calendar-alt"></i> Сб-Вс: 13:00 - 22:00</li>
-                        <li><i class="fas fa-clock"></i> Выезд в течение 1-2 часов</li>
+                        <li><i class="fas fa-clock"></i> Выезд в течение 30-40 минут</li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -980,7 +1149,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Мастер компьютеров и ноутбуков. Все права защищены.</p>
+                <p>&copy; 2025 Мастер компьютеров и ноутбуков. Все права защищены.</p>
             </div>
         </footer>
     </div>
@@ -995,7 +1164,7 @@
                 <div class="form-group">
                     <label for="username">Придумайте ник (на английском) *</label>
                     <input type="text" id="username" class="form-control" required placeholder="Например: alex1985">
-                    <small>Ник не должен содержать неприличные слова</small>
+                    <small style="color: var(--gray);">Ник не должен содержать неприличные слова</small>
                 </div>
                 <button type="submit" class="btn-main" style="width:100%; margin-top:20px;">Зарегистрироваться</button>
             </form>
@@ -1016,12 +1185,14 @@
 
     <!-- Админ панель (скрытая) -->
     <div id="adminPanel" class="admin-panel">
-        <h2>Админ панель</h2>
-        <button id="closeAdmin" class="btn-main" style="margin-bottom:20px;">Закрыть</button>
+        <div class="admin-header">
+            <h2><i class="fas fa-cogs"></i> Админ панель</h2>
+            <button id="closeAdmin" class="btn-main" style="padding: 10px 20px; font-size: 0.9rem;">Закрыть</button>
+        </div>
         <div class="work-hours">
             <h3>Управление временными слотами</h3>
             <div>
-                <label for="adminDateFilter">Фильтр по дате:</label>
+                <label for="adminDateFilter" style="color: var(--light);">Фильтр по дате:</label>
                 <input type="text" id="adminDateFilter" class="flatpickr-input" placeholder="Выберите дату">
             </div>
         </div>
@@ -1294,9 +1465,15 @@
 
         // Инициализация календаря
         function initDatePicker() {
+            // Рассчитываем максимальную дату (месяц вперед)
+            const today = new Date();
+            const maxDate = new Date();
+            maxDate.setMonth(today.getMonth() + 1);
+            
             flatpickrInstance = flatpickr("#datePicker", {
                 locale: "ru",
                 minDate: "today",
+                maxDate: maxDate,
                 dateFormat: "d.m.Y",
                 disableMobile: true,
                 onChange: function(selectedDates, dateStr) {
@@ -1318,7 +1495,6 @@
             });
             
             // Установка сегодняшней даты по умолчанию
-            const today = new Date();
             const todayFormatted = `${today.getDate().toString().padStart(2, '0')}.${(today.getMonth() + 1).toString().padStart(2, '0')}.${today.getFullYear()}`;
             flatpickrInstance.setDate(todayFormatted, false);
             selectedDate = todayFormatted;
@@ -1476,6 +1652,12 @@
             document.getElementById('myRequestsLink').addEventListener('click', function(e) {
                 e.preventDefault();
                 showMyRequests();
+            });
+            
+            // Кнопка возврата на главную
+            document.getElementById('backToMain').addEventListener('click', function(e) {
+                e.preventDefault();
+                hideMyRequests();
             });
             
             // Форма регистрации
@@ -1751,6 +1933,20 @@
             loadUserRequests();
         }
 
+        // Скрыть раздел с заявками и показать все остальное
+        function hideMyRequests() {
+            // Показать все разделы
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'block';
+            });
+            
+            // Скрыть раздел с заявками
+            document.getElementById('my-requests').style.display = 'none';
+            
+            // Прокрутить к началу страницы
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
         // Загрузка заявок пользователя
         function loadUserRequests() {
             if (!currentUser) return;
@@ -1759,7 +1955,7 @@
             const requestsList = document.getElementById('requestsList');
             
             if (requests.length === 0) {
-                requestsList.innerHTML = '<p style="text-align:center; font-size:1.2rem;">У вас еще нет заявок</p>';
+                requestsList.innerHTML = '<p style="text-align:center; font-size:1.2rem; color: var(--light);">У вас еще нет заявок</p>';
                 return;
             }
             
@@ -1796,7 +1992,7 @@
                     <p><strong>Адрес:</strong> ${request.address}</p>
                     <p><strong>Проблема:</strong> ${request.problem.substring(0, 200)}${request.problem.length > 200 ? '...' : ''}</p>
                     ${request.status === 'new' || request.status === 'in_progress' ? 
-                      `<button onclick="cancelRequest('${request.id}', '${request.appointmentDate}', '${request.appointmentTime}')" class="btn-main" style="margin-top:15px; background-color:#e74c3c;">Отменить заявку</button>` : 
+                      `<button onclick="cancelRequest('${request.id}', '${request.appointmentDate}', '${request.appointmentTime}')" class="btn-main" style="margin-top:15px; background-color:#ef4444;">Отменить заявку</button>` : 
                       ''}
                 </div>
                 `;
@@ -1867,13 +2063,13 @@
                     <td>${statusText}</td>
                     <td>
                         ${request.status === 'new' || request.status === 'in_progress' ? 
-                          `<button onclick="adminCancelRequest('${request.id}', '${request.appointmentDate}', '${request.appointmentTime}')" style="padding:5px 10px; background-color:#e74c3c; color:white; border:none; border-radius:4px; cursor:pointer;">Отменить</button>` : 
+                          `<button onclick="adminCancelRequest('${request.id}', '${request.appointmentDate}', '${request.appointmentTime}')" style="padding:5px 10px; background-color:#ef4444; color:white; border:none; border-radius:4px; cursor:pointer;">Отменить</button>` : 
                           ''}
                         ${request.status === 'new' ? 
                           `<button onclick="adminStartRequest('${request.id}')" style="padding:5px 10px; background-color:#3498db; color:white; border:none; border-radius:4px; cursor:pointer; margin-left:5px;">В работу</button>` : 
                           ''}
                         ${request.status === 'in_progress' ? 
-                          `<button onclick="adminCompleteRequest('${request.id}')" style="padding:5px 10px; background-color:#27ae60; color:white; border:none; border-radius:4px; cursor:pointer; margin-left:5px;">Завершить</button>` : 
+                          `<button onclick="adminCompleteRequest('${request.id}')" style="padding:5px 10px; background-color:#10b981; color:white; border:none; border-radius:4px; cursor:pointer; margin-left:5px;">Завершить</button>` : 
                           ''}
                     </td>
                 </tr>
