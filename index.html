@@ -901,6 +901,55 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
+        /* Окно с ценами */
+        .prices-container {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .price-category {
+            margin-bottom: 30px;
+        }
+
+        .price-category h3 {
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 71, 87, 0.3);
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .price-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+
+        .price-item span:first-child {
+            font-size: 1rem;
+            color: var(--light);
+        }
+
+        .price-item span:last-child {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
         /* Бета-версия предупреждение */
         .beta-warning {
             background: linear-gradient(135deg, rgba(255, 184, 0, 0.2), rgba(255, 184, 0, 0.1));
@@ -1330,6 +1379,7 @@
                     <li><a href="#master">О мастере</a></li>
                     <li><a href="#reviews">Отзывы</a></li>
                     <li><a href="#request">Оставить заявку</a></li>
+                    <li><a href="#" id="priceLink">Price</a></li>
                 </ul>
             </nav>
             <div class="user-section">
@@ -1353,18 +1403,13 @@
                     <div class="work-hours-compact">
                         <div class="work-hours-item-compact">
                             <i class="fas fa-calendar-week" aria-hidden="true"></i>
-                            <h4>Пн-Пт</h4>
-                            <p>12:00 - 23:00</p>
-                        </div>
-                        <div class="work-hours-item-compact">
-                            <i class="fas fa-calendar-weekend" aria-hidden="true"></i>
-                            <h4>Сб-Вс</h4>
-                            <p>13:00 - 22:00</p>
+                            <h4>Пн-Пт / Сб-Вс</h4>
+                            <p>12:00 - 23:00 / 13:00 - 22:00</p>
                         </div>
                         <div class="work-hours-item-compact">
                             <i class="fas fa-car" aria-hidden="true"></i>
                             <h4>Выезд</h4>
-                            <p>30-40 мин</p>
+                            <p>до 1 часа</p>
                         </div>
                         <div class="work-hours-item-compact">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -1378,7 +1423,7 @@
                     </p>
                     
                     <p class="warning-text">
-                        <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Из Московской области звоните по телефону
+                        <i class="fas fa-exclamation-circle" aria-hidden="true"></i> Для создания заявки из МО звоните по телефону или чат Telegram
                     </p>
                     
                     <div class="guarantee-note">
@@ -1398,13 +1443,13 @@
                 <div class="reason">
                     <div class="reason-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
                     <h3>Экспресс-ремонт</h3>
-                    <p>Мы понимаем, как важно вернуть устройство к жизни быстро. Среднее время выезда мастера - 30-40 минут.</p>
+                    <p>Мы понимаем, как важно вернуть устройство к жизни быстро. Среднее время выезда мастера - до 1 часа.</p>
                     <div class="reason-details">
                         <ul>
-                            <li>Срочный выезд в течение 40 минут</li>
+                            <li>Срочный выезд в течение 1 часа</li>
                             <li>Диагностика за 15 минут бесплатно</li>
                             <li>90% ремонтов выполняется на месте</li>
-                            <li>Все необходимые запчасти в наличии</li>
+                            <li>Запчасти только под заказ по факту</li>
                             <li>Возможность ремонта при клиенте</li>
                         </ul>
                     </div>
@@ -1418,7 +1463,6 @@
                             <li>Гарантия до 30 дней на все работы</li>
                             <li>Используем только оригинальные комплектующие</li>
                             <li>Прозрачная смета без скрытых платежей</li>
-                            <li>Аккредитованный сервисный центр</li>
                             <li>Официальная гарантия на запчасти</li>
                         </ul>
                     </div>
@@ -1433,7 +1477,6 @@
                             <li>Индивидуальный подход к каждому клиенту</li>
                             <li>Более 100 успешно выполненных заказов</li>
                             <li>Постоянное повышение квалификации</li>
-                            <li>Сертификаты ведущих производителей</li>
                         </ul>
                     </div>
                 </div>
@@ -1460,7 +1503,6 @@
                             <li>Фиксированная цена до начала работ</li>
                             <li>Бесплатная диагностика при ремонте</li>
                             <li>Скидки постоянным клиентам</li>
-                            <li>Рассрочка платежа для дорогих ремонтов</li>
                             <li>Возврат денег при невозможности ремонта</li>
                         </ul>
                     </div>
@@ -1471,8 +1513,8 @@
                     <p>Мы ценим каждого клиента и стремимся обеспечить максимальный комфорт при работе с нами.</p>
                     <div class="reason-details">
                         <ul>
-                            <li>Круглосуточная поддержка по телефону</li>
-                            <li>Работаем в выходные и праздники</li>
+                            <li>Поддержка по телефону в рабочее время</li>
+                            <li>Работаем в выходные</li>
                             <li>Гибкий график под ваши нужды</li>
                             <li>Конфиденциальность данных гарантирована</li>
                             <li>Бесплатная консультация после ремонта</li>
@@ -1498,10 +1540,6 @@
                             <div class="highlight">
                                 <h4>Опыт работы</h4>
                                 <p>2+ года практического опыта, постоянное обучение и повышение квалификации</p>
-                            </div>
-                            <div class="highlight">
-                                <h4>Образование</h4>
-                                <p>Высшее техническое образование, сертификаты Microsoft, CompTIA A+</p>
                             </div>
                             <div class="highlight">
                                 <h4>Подход</h4>
@@ -1538,7 +1576,7 @@
                     <p>Обратился к Андрею с проблемой - ноутбук перестал включаться. Мастер приехал в течение 40 минут, быстро диагностировал проблему (оказался сгоревший блок питания) и заменил его на новый. Все сделал качественно, дал гарантию 14 дней на работу. Цена оказалась ниже, чем в других сервисах, что приятно удивило.</p>
                     <div class="review-author">
                         <div class="review-author-info">
-                            <h4>Сергей Волков</h4>
+                            <h4>Сергей</h4>
                             <p>Клиент с января 2025</p>
                         </div>
                     </div>
@@ -1547,7 +1585,7 @@
                     <p>Работаю удаленно, и когда сломался ноутбук, это была катастрофа. Андрей помог удаленно за 40 минут - проблема была в вирусах и забитой системе. Не только все починил, но и настроил резервное копирование. Теперь регулярно обращаюсь для профилактики системы.</p>
                     <div class="review-author">
                         <div class="review-author-info">
-                            <h4>Мария Соколова</h4>
+                            <h4>Мария</h4>
                             <p>Клиент с марта 2025</p>
                         </div>
                     </div>
@@ -1556,7 +1594,7 @@
                     <p>Нужно было срочно восстановить данные с жесткого диска после падения ноутбука. Андрей приехал в тот же день, смог вытащить все важные файлы и документы. Профессионал высокого уровня, работает аккуратно и внимательно. Обязательно порекомендую друзьям!</p>
                     <div class="review-author">
                         <div class="review-author-info">
-                            <h4>Дмитрий Иванов</h4>
+                            <h4>Дмитрий</h4>
                             <p>Клиент с февраля 2025</p>
                         </div>
                     </div>
@@ -1565,7 +1603,7 @@
                     <p>Заказывал апгрейд компьютера для игр. Андрей не только подобрал оптимальные комплектующие по соотношению цена/качество, но и собрал всё на дому. Система работает стабильно, температура в норме. Отличный специалист, знает своё дело на 100%.</p>
                     <div class="review-author">
                         <div class="review-author-info">
-                            <h4>Александр Петров</h4>
+                            <h4>Александр</h4>
                             <p>Клиент с декабря 2024</p>
                         </div>
                     </div>
@@ -1574,7 +1612,7 @@
                     <p>Ноутбук сына перестал заряжаться. В других сервисах предлагали менять материнскую плату за 15 тысяч. Андрей диагностировал проблему как неисправность разъема питания, отремонтировал его за гораздо меньшую сумму. Спасибо за честность и профессионализм!</p>
                     <div class="review-author">
                         <div class="review-author-info">
-                            <h4>Ольга Николаева</h4>
+                            <h4>Ольга</h4>
                             <p>Клиент с ноября 2024</p>
                         </div>
                     </div>
@@ -1587,26 +1625,15 @@
             <h2 class="section-title">Оставить заявку на ремонт</h2>
             <div class="form-container">
                 <div class="work-hours" style="margin-top: 0; padding: 10px;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Интервал записи: 2 часа</h3>
-                    <p style="font-size: 0.9rem;">Выберите удобное время в рабочее время мастерской</p>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Выберите удобную дату</h3>
                 </div>
                 
-                <!-- Выбор даты и времени -->
+                <!-- Выбор даты -->
                 <div class="datetime-selection">
-                    <div class="date-selection">
+                    <div class="date-selection" style="grid-column: 1 / -1;">
                         <h3>Выберите дату *</h3>
                         <input type="text" id="datePicker" class="flatpickr-input" placeholder="Выберите дату" readonly required>
                     </div>
-                    <div class="time-selection">
-                        <h3>Выберите время *</h3>
-                        <div id="timeSlots" class="time-slots">
-                            <!-- Временные слоты будут сгенерированы скриптом -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="selectedDateTime" class="selected-datetime" style="display:none;">
-                    Вы выбрали: <span id="selectedDate"></span> в <span id="selectedTime"></span>
                 </div>
                 
                 <form id="simpleRequestForm">
@@ -1632,9 +1659,6 @@
                             <option value="">Выберите тип устройства</option>
                             <option value="Ноутбук">Ноутбук</option>
                             <option value="Компьютер">Стационарный компьютер</option>
-                            <option value="Моноблок">Моноблок</option>
-                            <option value="Игровая консоль">Игровая консоль</option>
-                            <option value="Периферия">Периферия (клавиатура, мышь)</option>
                             <option value="Другое">Другое устройство</option>
                         </select>
                     </div>
@@ -1664,7 +1688,7 @@
                     <ul class="contact-info">
                         <li><i class="fas fa-calendar-alt" aria-hidden="true"></i> Пн-Пт: 12:00 - 23:00</li>
                         <li><i class="fas fa-calendar-alt" aria-hidden="true"></i> Сб-Вс: 13:00 - 22:00</li>
-                        <li><i class="fas fa-clock" aria-hidden="true"></i> Выезд в течение 30-40 минут</li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Выезд до 1 часа</li>
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Только г. Москва</li>
                     </ul>
                 </div>
@@ -1693,14 +1717,181 @@
                 <!-- Сообщение будет вставлено скриптом -->
             </div>
             
-            <!-- Бета-версия предупреждение -->
+            <!-- Важное сообщение -->
             <div class="beta-warning">
                 <h4><i class="fas fa-exclamation-triangle"></i> Важная информация!</h4>
-                <p>В ближайшее рабочее время с вами свяжется мастер для уточнения деталей проблемы и согласования точного времени визита.</p>
+                <p>В ближайшее рабочее время с вами свяжется мастер для уточнения деталей проблемы.</p>
                 <p>Если в течение 2-х рабочих часов с вами не связались, пожалуйста, напишите самостоятельно в Telegram: <strong>@Official_partner_of_Skoda</strong></p>
             </div>
             
             <button id="okSuccess" class="btn-main" style="width:100%; margin-top:20px;">Понятно</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно с ценами -->
+    <div id="priceModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="priceModalTitle">
+        <div class="modal-content">
+            <span class="close-modal" id="closePrice" aria-label="Закрыть окно">&times;</span>
+            <h2 id="priceModalTitle"><i class="fas fa-tags"></i> Прайс-лист на услуги</h2>
+            
+            <div class="prices-container">
+                <div class="price-category">
+                    <h3>Основные услуги</h3>
+                    <div class="price-item">
+                        <span>Выезд мастера до клиента</span>
+                        <span>500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Диагностика оборудования</span>
+                        <span>250 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Комплексная диагностика (при ремонте)</span>
+                        <span>Бесплатно</span>
+                    </div>
+                </div>
+                
+                <div class="price-category">
+                    <h3>Программное обеспечение</h3>
+                    <div class="price-item">
+                        <span>Установка Windows 10/11</span>
+                        <span>1200 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Настройка Windows после установки</span>
+                        <span>800 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Установка офисных программ</span>
+                        <span>500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Установка драйверов</span>
+                        <span>600 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Удаление вирусов</span>
+                        <span>1000 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Чистка системы от мусора</span>
+                        <span>700 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="price-category">
+                    <h3>Аппаратный ремонт ноутбуков</h3>
+                    <div class="price-item">
+                        <span>Замена матрицы экрана</span>
+                        <span>от 1500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Замена клавиатуры</span>
+                        <span>от 1000 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Замена термопасты</span>
+                        <span>800 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Чистка от пыли с разборкой</span>
+                        <span>1200 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Замена разъема питания</span>
+                        <span>от 1500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Ремонт материнской платы (диагностика)</span>
+                        <span>от 1000 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="price-category">
+                    <h3>Аппаратный ремонт компьютеров</h3>
+                    <div class="price-item">
+                        <span>Сборка компьютера</span>
+                        <span>от 2000 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Замена блока питания</span>
+                        <span>800 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Установка/замена видеокарты</span>
+                        <span>600 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Установка/замена процессора</span>
+                        <span>800 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Установка оперативной памяти</span>
+                        <span>300 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Установка жесткого диска/SSD</span>
+                        <span>500 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="price-category">
+                    <h3>Восстановление данных</h3>
+                    <div class="price-item">
+                        <span>Восстановление с HDD/SSD (логические ошибки)</span>
+                        <span>от 1500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Восстановление с флешки</span>
+                        <span>от 1200 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Резервное копирование данных</span>
+                        <span>от 800 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="price-category">
+                    <h3>Сетевое оборудование</h3>
+                    <div class="price-item">
+                        <span>Настройка Wi-Fi роутера</span>
+                        <span>800 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Прокладка сетевого кабеля (за метр)</span>
+                        <span>100 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Обжим коннекторов RJ-45</span>
+                        <span>200 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="price-category">
+                    <h3>Удаленная помощь</h3>
+                    <div class="price-item">
+                        <span>Удаленная диагностика (30 мин)</span>
+                        <span>500 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Удаленная настройка (1 час)</span>
+                        <span>800 ₽</span>
+                    </div>
+                    <div class="price-item">
+                        <span>Консультация по телефону/Telegram</span>
+                        <span>300 ₽</span>
+                    </div>
+                </div>
+                
+                <div class="work-hours" style="margin-top: 30px;">
+                    <p class="warning-text">
+                        <i class="fas fa-info-circle"></i> Окончательная стоимость определяется после диагностики. 
+                        Цены на запчасти обсуждаются отдельно.
+                    </p>
+                </div>
+            </div>
+            
+            <button id="backToMain" class="btn-main" style="width:100%; margin-top:20px;">Вернуться на главную</button>
         </div>
     </div>
 
@@ -1742,7 +1933,7 @@
                                 <th>Телефон</th>
                                 <th>Устройство</th>
                                 <th>Адрес</th>
-                                <th>Дата/Время</th>
+                                <th>Дата</th>
                                 <th>Статус</th>
                                 <th>Действия</th>
                             </tr>
@@ -1816,7 +2007,7 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 <script>
-    // Конфигурация Telegram бота
+    // Конфигурация Telegram бота - ОБНОВЛЕННЫЕ ДАННЫЕ
     const TELEGRAM_BOT_TOKEN = '8400236799:AAGX1M-rA4dbjvSsVxzxpt59vOtM_LpABV8';
     const TELEGRAM_CHAT_ID = '1070056420';
     
@@ -1828,10 +2019,7 @@
     let parallaxTimeout = null;
     let adminAccessEnabled = false;
     let selectedDate = null;
-    let selectedTime = null;
     let flatpickrInstance = null;
-    let bookedSlots = {};
-    let timeSlotsInterval = 2; // Интервал записи 2 часа
 
     // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', function() {
@@ -1853,14 +2041,11 @@
         // Настройка простой формы заявки
         setupSimpleRequestForm();
         
+        // Настройка окна с ценами
+        setupPriceModal();
+        
         // Загрузка тестовых данных (если нет своих)
         loadSampleDataIfEmpty();
-        
-        // Загрузка занятых слотов
-        loadBookedSlots();
-        
-        // Автоматическое определение устройства
-        setupDeviceAutoDetection();
     });
 
     // Инициализация календаря
@@ -1880,9 +2065,6 @@
             disableMobile: true,
             onChange: function(selectedDates, dateStr) {
                 selectedDate = dateStr;
-                selectedTime = null;
-                updateTimeSlots();
-                updateSelectedDateTimeDisplay();
             }
         });
         
@@ -1892,142 +2074,6 @@
             flatpickrInstance.setDate(todayFormatted, false);
         }
         selectedDate = todayFormatted;
-        
-        // Генерация временных слотов
-        updateTimeSlots();
-    }
-
-    // Загрузка занятых слотов
-    function loadBookedSlots() {
-        try {
-            const requests = loadRequests();
-            bookedSlots = {};
-            
-            requests.forEach(request => {
-                if (request.appointmentDate && request.appointmentTime) {
-                    const slotKey = `${request.appointmentDate}_${request.appointmentTime}`;
-                    bookedSlots[slotKey] = true;
-                }
-            });
-        } catch (error) {
-            console.error('Ошибка загрузки занятых слотов:', error);
-        }
-    }
-
-    // Проверка занятости слота
-    function isSlotBooked(date, time) {
-        const slotKey = `${date}_${time}`;
-        return bookedSlots[slotKey] || false;
-    }
-
-    // Генерация временных слотов с интервалом 2 часа
-    function updateTimeSlots() {
-        if (!selectedDate) return;
-        
-        const timeSlotsContainer = document.getElementById('timeSlots');
-        if (!timeSlotsContainer) return;
-        
-        timeSlotsContainer.innerHTML = '';
-        
-        // Определяем день недели для выбранной даты
-        const dateParts = selectedDate.split('.');
-        const dateObj = new Date(dateParts[2], dateParts[1] - 1, dateParts[0]);
-        const dayOfWeek = dateObj.getDay();
-        
-        // Определяем рабочие часы
-        let workHours = [];
-        
-        // Пн-Пт: 12:00 - 23:00 с интервалом 2 часа
-        if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-            for (let hour = 12; hour <= 21; hour += timeSlotsInterval) {
-                workHours.push(`${hour.toString().padStart(2, '0')}:00`);
-            }
-        } 
-        // Сб-Вс: 13:00 - 22:00 с интервалом 2 часа
-        else {
-            for (let hour = 13; hour <= 20; hour += timeSlotsInterval) {
-                workHours.push(`${hour.toString().padStart(2, '0')}:00`);
-            }
-        }
-        
-        // Добавляем последний слот если нужно
-        if (dayOfWeek >= 1 && dayOfWeek <= 5 && timeSlotsInterval === 2) {
-            // Для Пн-Пт добавляем 23:00 если это последний интервал
-            if (workHours[workHours.length - 1] !== '23:00') {
-                workHours.push('23:00');
-            }
-        }
-        
-        // Создаем кнопки для временных слотов
-        workHours.forEach(time => {
-            const timeSlot = document.createElement('button');
-            timeSlot.className = 'time-slot';
-            timeSlot.textContent = time;
-            timeSlot.dataset.time = time;
-            timeSlot.type = 'button';
-            
-            // Проверяем, занят ли слот
-            if (isSlotBooked(selectedDate, time)) {
-                timeSlot.classList.add('booked');
-                timeSlot.disabled = true;
-                timeSlot.title = 'Это время уже занято';
-            } else {
-                timeSlot.addEventListener('click', function() {
-                    selectTimeSlot(time);
-                });
-            }
-            
-            // Если это выбранный слот
-            if (selectedTime === time) {
-                timeSlot.classList.add('selected');
-            }
-            
-            timeSlotsContainer.appendChild(timeSlot);
-        });
-        
-        // Если выбранное время занято, сбрасываем его
-        if (selectedTime && isSlotBooked(selectedDate, selectedTime)) {
-            selectedTime = null;
-            updateSelectedDateTimeDisplay();
-        }
-        
-        // Если нет доступных слотов
-        if (workHours.length === 0) {
-            timeSlotsContainer.innerHTML = '<p style="color: var(--gray); text-align: center; padding: 10px; font-size: 0.9rem;">Нет доступных временных слотов на эту дату</p>';
-        }
-    }
-
-    // Выбор временного слота
-    function selectTimeSlot(time) {
-        // Снимаем выделение со всех слотов
-        document.querySelectorAll('.time-slot').forEach(slot => {
-            slot.classList.remove('selected');
-        });
-        
-        // Выделяем выбранный слот
-        const selectedSlot = document.querySelector(`.time-slot[data-time="${time}"]`);
-        if (selectedSlot && !selectedSlot.classList.contains('booked')) {
-            selectedSlot.classList.add('selected');
-            selectedTime = time;
-            updateSelectedDateTimeDisplay();
-        }
-    }
-
-    // Обновление отображения выбранной даты и времени
-    function updateSelectedDateTimeDisplay() {
-        const selectedDateTimeDiv = document.getElementById('selectedDateTime');
-        const selectedDateSpan = document.getElementById('selectedDate');
-        const selectedTimeSpan = document.getElementById('selectedTime');
-        
-        if (!selectedDateTimeDiv || !selectedDateSpan || !selectedTimeSpan) return;
-        
-        if (selectedDate && selectedTime) {
-            selectedDateSpan.textContent = selectedDate;
-            selectedTimeSpan.textContent = selectedTime;
-            selectedDateTimeDiv.style.display = 'block';
-        } else {
-            selectedDateTimeDiv.style.display = 'none';
-        }
     }
 
     // Настройка простой формы заявки
@@ -2080,9 +2126,9 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Проверка выбора даты и времени
-            if (!selectedDate || !selectedTime) {
-                alert('Пожалуйста, выберите дату и время для записи');
+            // Проверка выбора даты
+            if (!selectedDate) {
+                alert('Пожалуйста, выберите дату для записи');
                 return;
             }
             
@@ -2097,7 +2143,6 @@
                 device: document.getElementById('deviceType').value,
                 problem: document.getElementById('problemDescription').value.trim(),
                 appointmentDate: selectedDate,
-                appointmentTime: selectedTime,
                 date: new Date().toLocaleDateString('ru-RU'), // Только дата, без времени
                 status: 'new',
                 timestamp: Date.now()
@@ -2128,9 +2173,6 @@
                 // Отправляем уведомление в Telegram
                 sendTelegramNotification(requestData);
                 
-                // Обновляем занятые слоты
-                loadBookedSlots();
-                
                 // Очищаем форму
                 form.reset();
                 document.getElementById('charCount').textContent = '500';
@@ -2141,11 +2183,6 @@
                 document.getElementById('clientAddress').placeholder = "Улица, дом, квартира";
                 document.getElementById('clientAddress').required = true;
                 
-                // Сбрасываем выбор времени
-                selectedTime = null;
-                updateSelectedDateTimeDisplay();
-                updateTimeSlots();
-                
                 // Прокручиваем к верху
                 window.scrollTo({top: 0, behavior: 'smooth'});
             } else {
@@ -2154,36 +2191,36 @@
         });
     }
 
-    // Настройка автоматического определения устройства
-    function setupDeviceAutoDetection() {
-        const problemDescription = document.getElementById('problemDescription');
-        const deviceType = document.getElementById('deviceType');
+    // Настройка окна с ценами
+    function setupPriceModal() {
+        const priceLink = document.getElementById('priceLink');
+        const priceModal = document.getElementById('priceModal');
+        const closePrice = document.getElementById('closePrice');
+        const backToMain = document.getElementById('backToMain');
         
-        if (!problemDescription || !deviceType) return;
+        if (priceLink) {
+            priceLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                priceModal.classList.add('active');
+            });
+        }
         
-        problemDescription.addEventListener('input', function() {
-            const text = this.value.toLowerCase();
-            
-            // Определяем тип устройства по тексту проблемы
-            if (text.includes('ноутбук') || text.includes('лэптоп') || text.includes('асус') || 
-                text.includes('lenovo') || text.includes('hp') || text.includes('dell') || 
-                text.includes('acer') || text.includes('msi') || text.includes('macbook') ||
-                text.includes('ноута') || text.includes('ноуте')) {
-                deviceType.value = 'Ноутбук';
-            } else if (text.includes('компьютер') || text.includes('пк') || text.includes('системный блок') || 
-                      text.includes('процессор') || text.includes('видеокарта') || text.includes('материнская плата') ||
-                      text.includes('компе') || text.includes('компу')) {
-                deviceType.value = 'Компьютер';
-            } else if (text.includes('моноблок') || text.includes('all-in-one') || text.includes('моноблока')) {
-                deviceType.value = 'Моноблок';
-            } else if (text.includes('playstation') || text.includes('xbox') || text.includes('nintendo') || 
-                      text.includes('приставка') || text.includes('консоль') || text.includes('ps4') || 
-                      text.includes('ps5') || text.includes('игровая')) {
-                deviceType.value = 'Игровая консоль';
-            } else if (text.includes('клавиатура') || text.includes('мышь') || text.includes('мышка') || 
-                      text.includes('принтер') || text.includes('сканер') || text.includes('монитор') ||
-                      text.includes('колонки') || text.includes('наушники')) {
-                deviceType.value = 'Периферия';
+        if (closePrice) {
+            closePrice.addEventListener('click', function() {
+                priceModal.classList.remove('active');
+            });
+        }
+        
+        if (backToMain) {
+            backToMain.addEventListener('click', function() {
+                priceModal.classList.remove('active');
+            });
+        }
+        
+        // Закрытие по клику вне окна
+        window.addEventListener('click', function(event) {
+            if (event.target === priceModal) {
+                priceModal.classList.remove('active');
             }
         });
     }
@@ -2244,11 +2281,7 @@
                 <p><strong>Номер заявки:</strong> ${requestData.id}</p>
                 <p><strong>Телефон:</strong> ${requestData.phone}</p>
                 <p><strong>Устройство:</strong> ${requestData.device}</p>
-                <p><strong>Дата записи:</strong> ${requestData.appointmentDate} в ${requestData.appointmentTime}</p>
                 <p><strong>Дата создания:</strong> ${requestData.date}</p>
-                <p style="margin-top: 15px; color: var(--secondary); font-weight: bold;">
-                    В ближайшее рабочее время с вами свяжется мастер для уточнения деталей!
-                </p>
             `;
         }
         
@@ -2271,7 +2304,6 @@
 📍 Адрес: ${requestData.address}
 💻 Устройство: ${requestData.device}
 📅 Дата записи: ${requestData.appointmentDate}
-⏰ Время записи: ${requestData.appointmentTime}
 📝 Проблема: ${requestData.problem.substring(0, 300)}
 📅 Дата создания: ${requestData.date}
 🔘 Статус: Новая`;
@@ -2348,7 +2380,7 @@
 👤 Имя: ${requestData.name}
 📞 Телефон: ${requestData.phone}
 💻 Устройство: ${requestData.device}
-📅 Дата записи: ${requestData.appointmentDate} ${requestData.appointmentTime || ''}
+📅 Дата записи: ${requestData.appointmentDate}
 📝 Проблема: ${requestData.problem.substring(0, 200)}...
 📅 Дата обновления: ${new Date().toLocaleDateString('ru-RU')}
 🔘 Статус: ${statusText}`;
@@ -2464,7 +2496,6 @@
                     localStorage.removeItem('mskrepair_message_ids');
                     updateAdminPanel();
                     updateArchivePanel();
-                    loadBookedSlots();
                     showExportResult('Все данные успешно удалены', 'success');
                 }
             });
@@ -2493,7 +2524,7 @@
             });
         }
         
-        // Закрытие модального окна по клику вне
+        // Закрытие модальных окон по клику вне
         window.addEventListener('click', function(event) {
             const successModal = document.getElementById('successModal');
             if (event.target === successModal) {
@@ -2559,7 +2590,7 @@
                 <td>${request.phone}</td>
                 <td>${request.device}</td>
                 <td>${request.address}</td>
-                <td>${request.appointmentDate || ''} ${request.appointmentTime || ''}</td>
+                <td>${request.appointmentDate || ''}</td>
                 <td><span class="${statusClass}">${statusText}</span></td>
                 <td>
                     ${request.status === 'new' ? 
@@ -2650,7 +2681,6 @@
             localStorage.setItem('mskrepair_requests', JSON.stringify(requests));
             updateAdminPanel();
             updateArchivePanel();
-            loadBookedSlots();
             
             // Обновляем сообщение в Telegram
             updateTelegramMessage(requests[index], newStatus);
@@ -2721,7 +2751,7 @@
         }
         
         // Заголовки CSV
-        let csv = 'ID;Имя;Телефон;Адрес;Устройство;Проблема;Дата записи;Время записи;Статус;Дата создания\n';
+        let csv = 'ID;Имя;Телефон;Адрес;Устройство;Проблема;Дата записи;Статус;Дата создания\n';
         
         // Данные
         requests.forEach(request => {
@@ -2733,7 +2763,6 @@
                 `"${request.device}"`,
                 `"${request.problem.replace(/"/g, '""')}"`,
                 request.appointmentDate || '',
-                request.appointmentTime || '',
                 request.status,
                 request.date
             ];
@@ -2871,26 +2900,24 @@
             const sampleData = [
                 {
                     id: 'MSK-001',
-                    name: 'Иван Петров',
+                    name: 'Иван',
                     phone: '+7 (999) 123-45-67',
                     address: 'ул. Ленина, д. 10, кв. 25',
                     device: 'Ноутбук',
                     problem: 'Не включается, не реагирует на кнопку питания',
                     appointmentDate: tomorrowFormatted,
-                    appointmentTime: '14:00',
                     date: '15.03.2025',
                     status: 'new',
                     timestamp: Date.now() - 86400000 * 2
                 },
                 {
                     id: 'MSK-002',
-                    name: 'Мария Соколова',
+                    name: 'Мария',
                     phone: '+7 (977) 987-65-43',
                     address: 'Удаленная помощь',
                     device: 'Компьютер',
                     problem: 'Медленно работает Windows 10, много вирусов, нужна чистка',
                     appointmentDate: tomorrowFormatted,
-                    appointmentTime: '16:00',
                     date: '14.03.2025',
                     status: 'in_progress',
                     timestamp: Date.now() - 86400000 * 3
