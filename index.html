@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Профессиональный ремонт компьютеров и ноутбуков в Москве. Выезд на дом и удаленная помощь. Быстро, качественно, с гарантией!">
     <title>MSK REPAIR PC | Ремонт компьютеров и ноутбуков в Москве</title>
     <link rel="icon" href="https://postimg.cc/5QNPb6nv" type="image/x-icon">
@@ -40,6 +40,7 @@
             min-height: 100vh;
             padding-top: 70px;
             -webkit-overflow-scrolling: touch;
+            -webkit-text-size-adjust: 100%;
         }
 
         .parallax {
@@ -77,7 +78,7 @@
         header {
             background-color: rgba(0, 0, 0, 0.98);
             color: white;
-            padding: 15px 0;
+            padding: 12px 0;
             position: fixed;
             top: 0;
             left: 0;
@@ -91,14 +92,14 @@
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #ff4757;
             text-decoration: none;
@@ -108,27 +109,36 @@
             text-transform: uppercase;
             white-space: nowrap;
             cursor: pointer;
-            min-height: 44px;
+            min-height: 40px;
+            flex-shrink: 0;
         }
 
         .logo i {
-            margin-right: 12px;
-            font-size: 2rem;
+            margin-right: 10px;
+            font-size: 1.8rem;
             color: #ff4757;
             flex-shrink: 0;
         }
 
         .logo-text {
             overflow: hidden;
+            font-size: 1.1rem;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav ul {
             display: flex;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         nav ul li {
-            margin-left: 25px;
+            margin-left: 15px;
         }
 
         nav ul li a {
@@ -136,11 +146,11 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s;
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             white-space: nowrap;
-            padding: 5px 10px;
+            padding: 8px 10px;
             border-radius: 4px;
-            min-height: 44px;
+            min-height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -163,11 +173,11 @@
             justify-content: center;
             background: linear-gradient(135deg, var(--secondary), #ff2e43);
             color: white;
-            padding: 14px 35px;
+            padding: 14px 30px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
@@ -184,13 +194,14 @@
         }
 
         .hero {
-            height: calc(100vh - 70px);
+            height: auto;
+            min-height: calc(100vh - 70px);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 0 20px;
+            padding: 40px 20px;
             position: relative;
         }
 
@@ -199,10 +210,11 @@
             animation: fadeInUp 1.5s ease-out;
             text-align: center;
             margin: 0 auto;
+            width: 100%;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 25px;
             text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);
             line-height: 1.2;
@@ -214,7 +226,7 @@
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 40px;
             text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
             color: var(--light);
@@ -223,9 +235,9 @@
 
         .work-hours {
             background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.95));
-            padding: 12px;
+            padding: 15px;
             border-radius: 10px;
-            margin: 15px 0;
+            margin: 20px 0;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
@@ -235,7 +247,7 @@
 
         .work-hours h3 {
             color: var(--secondary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 1.1rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -246,15 +258,15 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 6px;
-            margin: 8px 0;
+            gap: 10px;
+            margin: 15px 0;
         }
 
         .work-hours-item-compact {
             flex: 1;
-            min-width: 140px;
+            min-width: 150px;
             text-align: center;
-            padding: 8px;
+            padding: 10px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 6px;
             border-left: 2px solid var(--secondary);
@@ -263,31 +275,32 @@
         .work-hours-item-compact i {
             font-size: 1.1rem;
             color: var(--secondary);
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             display: block;
         }
 
         .work-hours-item-compact h4 {
             color: var(--light);
-            margin-bottom: 4px;
-            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
             font-weight: 600;
         }
 
         .work-hours-item-compact p {
             color: var(--gray);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             margin: 0;
+            line-height: 1.3;
         }
 
         .warning-text {
             color: #ff6b81 !important;
             font-weight: 600;
-            margin: 8px 0;
-            padding: 6px;
+            margin: 10px 0;
+            padding: 8px;
             background: rgba(255, 107, 129, 0.1);
             border-radius: 5px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             line-height: 1.4;
         }
 
@@ -298,8 +311,8 @@
         .guarantee-note {
             background: linear-gradient(135deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.1));
             border-left: 2px solid var(--secondary);
-            padding: 10px;
-            margin: 10px 0;
+            padding: 12px;
+            margin: 15px 0;
             border-radius: 6px;
             text-align: left;
             border: 1px solid rgba(255, 71, 87, 0.2);
@@ -307,8 +320,8 @@
 
         .guarantee-note p {
             color: var(--light);
-            margin: 4px 0;
-            font-size: 0.85rem;
+            margin: 5px 0;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
         }
@@ -317,16 +330,16 @@
             content: '•';
             color: var(--secondary);
             font-size: 1rem;
-            margin-right: 6px;
+            margin-right: 8px;
         }
 
         .guarantee-note strong {
             color: var(--secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         section {
-            padding: 80px 20px;
+            padding: 70px 20px;
             background-color: var(--card-bg);
             margin-bottom: 10px;
             border-radius: 16px;
@@ -340,9 +353,9 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: var(--secondary);
-            font-size: 2.2rem;
+            font-size: 2rem;
             position: relative;
             padding-bottom: 15px;
         }
@@ -365,7 +378,7 @@
 
         .reasons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             margin-bottom: 50px;
         }
@@ -391,7 +404,7 @@
         }
 
         .reason-icon {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 20px;
             background: rgba(255, 71, 87, 0.15);
@@ -408,7 +421,7 @@
         .reason h3 {
             margin-bottom: 15px;
             color: var(--light);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 600;
         }
 
@@ -484,7 +497,7 @@
         .master-info h2 {
             color: var(--secondary);
             margin-bottom: 20px;
-            font-size: 2rem;
+            font-size: 1.8rem;
             line-height: 1.3;
             font-weight: 700;
             position: relative;
@@ -504,7 +517,7 @@
 
         .master-info p {
             margin-bottom: 20px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--light);
             line-height: 1.6;
         }
@@ -532,7 +545,7 @@
         .highlight h4 {
             color: var(--secondary);
             margin-bottom: 8px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .highlight p {
@@ -553,7 +566,7 @@
             color: var(--secondary);
             padding: 8px 15px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             border: 1px solid rgba(255, 71, 87, 0.3);
             transition: all 0.3s;
@@ -569,7 +582,7 @@
             border-radius: 10px;
             font-weight: 700;
             margin-top: 30px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
             border: none;
             text-align: center;
@@ -633,7 +646,7 @@
         .review-author-info h4 {
             color: var(--secondary);
             margin-bottom: 5px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
         .review-author-info p {
@@ -644,7 +657,7 @@
 
         .form-container {
             background-color: rgba(10, 10, 10, 0.95);
-            padding: 40px;
+            padding: 35px;
             border-radius: 16px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             max-width: 800px;
@@ -770,7 +783,7 @@
         .date-selection h3, .time-selection h3 {
             color: var(--secondary);
             margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
         }
 
         .flatpickr-input {
@@ -879,7 +892,7 @@
 
         .modal-content {
             background-color: var(--card-bg);
-            padding: 40px;
+            padding: 35px;
             border-radius: 16px;
             max-width: 550px;
             width: 90%;
@@ -924,7 +937,7 @@
 
         .prices-container {
             background-color: var(--card-bg);
-            padding: 40px;
+            padding: 35px;
             border-radius: 16px;
             max-width: 800px;
             margin: 0 auto;
@@ -937,7 +950,7 @@
         .price-category h3 {
             color: var(--secondary);
             margin-bottom: 15px;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             padding-bottom: 10px;
             border-bottom: 2px solid rgba(255, 71, 87, 0.3);
         }
@@ -1272,19 +1285,34 @@
             font-size: 0.9rem;
         }
 
+        /* МОБИЛЬНАЯ ОПТИМИЗАЦИЯ */
         @media (max-width: 1200px) {
             .header-container {
-                flex-wrap: wrap;
+                padding: 0 15px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo i {
+                font-size: 1.6rem;
             }
         }
 
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
-            .master, .reasons {
-                flex-direction: column;
+            
+            .hero p {
+                font-size: 1.2rem;
             }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
             .master-section {
                 padding: 30px;
             }
@@ -1292,7 +1320,7 @@
 
         @media (min-width: 768px) and (max-width: 1024px) {
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
@@ -1301,10 +1329,6 @@
             
             .reasons {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .master {
-                flex-direction: column;
             }
             
             .master-info, .master-photo {
@@ -1324,100 +1348,246 @@
             }
         }
 
+        /* ОСНОВНЫЕ МОБИЛЬНЫЕ СТИЛИ */
         @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            header {
+                padding: 8px 0;
+                height: 60px;
+            }
+            
             .header-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 12px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 10px;
+                gap: 5px;
+            }
+            
+            .logo {
+                font-size: 1.1rem;
+                min-height: 32px;
+            }
+            
+            .logo i {
+                font-size: 1.3rem;
+                margin-right: 5px;
+            }
+            
+            .logo-text {
+                font-size: 0.9rem;
+            }
+            
+            nav {
+                display: block;
+                width: auto;
             }
             
             nav ul {
-                margin-top: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 8px;
-                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 3px;
+                margin: 0;
+                padding: 0;
             }
             
             nav ul li {
                 margin: 0;
-                flex: 1 0 auto;
-                text-align: center;
             }
             
             nav ul li a {
-                padding: 8px 5px;
-                font-size: 0.9rem;
-                display: block;
-            }
-            
-            .user-section {
-                margin-top: 10px;
+                font-size: 0.7rem;
+                padding: 6px 4px;
+                min-height: 30px;
+                text-align: center;
+                line-height: 1.1;
+                white-space: normal;
+                word-break: break-word;
             }
             
             .hero {
-                height: auto;
-                min-height: calc(100vh - 70px);
-                padding: 40px 20px;
+                min-height: calc(100vh - 60px);
+                padding: 30px 15px;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
             }
             
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            
+            .work-hours {
+                padding: 12px;
+                margin: 15px 0;
+            }
+            
+            .work-hours h3 {
+                font-size: 0.95rem;
+            }
+            
+            .work-hours-compact {
+                gap: 8px;
+                margin: 10px 0;
+            }
+            
+            .work-hours-item-compact {
+                min-width: calc(33.333% - 8px);
+                padding: 8px;
+            }
+            
+            .work-hours-item-compact i {
+                font-size: 0.9rem;
+            }
+            
+            .work-hours-item-compact h4 {
+                font-size: 0.8rem;
+            }
+            
+            .work-hours-item-compact p {
+                font-size: 0.7rem;
+            }
+            
+            .warning-text {
+                font-size: 0.75rem;
+                padding: 6px;
+                margin: 8px 0;
+            }
+            
+            .guarantee-note {
+                padding: 10px;
+                margin: 10px 0;
+            }
+            
+            .guarantee-note p {
+                font-size: 0.8rem;
             }
             
             section {
-                padding: 60px 15px;
+                padding: 40px 15px;
+                border-radius: 12px;
             }
             
-            .form-container {
-                padding: 25px 15px;
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+                padding-bottom: 10px;
             }
             
-            .modal-content {
-                padding: 25px 15px;
+            .reasons {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 30px;
             }
             
-            .admin-tabs {
-                flex-direction: column;
+            .reason {
+                padding: 20px;
+                border-radius: 10px;
             }
             
-            .admin-tab {
-                text-align: center;
+            .reason-icon {
+                font-size: 2rem;
+                width: 60px;
+                height: 60px;
+                margin-bottom: 15px;
+            }
+            
+            .reason h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            
+            .reason p {
+                font-size: 0.95rem;
+                margin-bottom: 10px;
+            }
+            
+            .reason-details li {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
             }
             
             .master-section {
                 padding: 25px 15px;
+                border-radius: 12px;
+                margin: 20px 0;
+            }
+            
+            .master-info h2 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .master-info p {
+                font-size: 0.95rem;
+                margin-bottom: 15px;
             }
             
             .master-highlights {
                 grid-template-columns: 1fr;
+                gap: 12px;
+                margin: 15px 0;
             }
             
-            body {
-                padding-top: 110px;
+            .highlight {
+                padding: 12px;
             }
             
-            .time-slots {
-                grid-template-columns: repeat(2, 1fr);
+            .highlight h4 {
+                font-size: 1rem;
             }
             
-            .work-hours-compact {
-                flex-direction: column;
+            .highlight p {
+                font-size: 0.85rem;
             }
             
-            .work-hours-item-compact {
-                min-width: 100%;
+            .master-skills {
+                gap: 6px;
+                margin-top: 15px;
+            }
+            
+            .skill-tag {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+            
+            .experience {
+                font-size: 0.9rem;
+                padding: 12px 20px;
+                margin-top: 20px;
+            }
+            
+            .review {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .review p {
+                font-size: 0.95rem;
+            }
+            
+            .review-author-info h4 {
+                font-size: 1rem;
+            }
+            
+            .form-container {
+                padding: 20px 15px;
+                border-radius: 12px;
+            }
+            
+            .form-group {
+                margin-bottom: 20px;
             }
             
             .form-control {
-                font-size: 16px;
                 padding: 12px;
+                font-size: 16px; /* Важно для iOS */
             }
             
             textarea.form-control {
@@ -1425,27 +1595,87 @@
             }
             
             .datetime-selection {
-                grid-template-columns: 1fr;
                 gap: 15px;
             }
             
-            .checkbox-group {
-                align-items: flex-start;
+            .date-selection, .time-selection {
+                padding: 15px;
             }
             
-            .admin-table-container {
-                overflow-x: auto;
-                margin: 0 -10px;
-                padding: 10px;
+            .date-selection h3, .time-selection h3 {
+                font-size: 1.1rem;
             }
             
-            .admin-table {
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            
+            .time-slot {
+                padding: 12px 5px;
+                font-size: 0.9rem;
+                min-height: 40px;
+            }
+            
+            .btn-main {
+                padding: 12px 25px;
+                font-size: 1rem;
+                min-height: 44px;
+            }
+            
+            .modal-content {
+                padding: 25px 15px;
+                width: 95%;
+                max-height: 90vh;
+            }
+            
+            .prices-container {
+                padding: 20px 10px;
+            }
+            
+            .price-category h3 {
+                font-size: 1.1rem;
+            }
+            
+            .price-item {
+                padding: 12px 15px;
+                flex-wrap: wrap;
+            }
+            
+            .price-item span:first-child {
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+                width: 100%;
+            }
+            
+            .price-item span:last-child {
+                font-size: 1rem;
+            }
+            
+            footer {
+                padding: 40px 15px 20px;
+                margin-top: 50px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-section h3 {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+            
+            .contact-info li {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+            
+            .copyright {
+                margin-top: 30px;
+                padding-top: 15px;
                 font-size: 0.8rem;
-            }
-            
-            .admin-table th, 
-            .admin-table td {
-                padding: 8px 6px;
             }
             
             .admin-tabs {
@@ -1460,47 +1690,76 @@
                 white-space: nowrap;
             }
             
-            .review {
-                padding: 20px 15px;
+            .admin-table-container {
+                margin: 0 -10px;
+                padding: 10px;
             }
             
-            .reason {
-                padding: 20px;
+            .admin-table {
+                font-size: 0.8rem;
+                min-width: 600px;
+            }
+            
+            .admin-table th, 
+            .admin-table td {
+                padding: 8px 6px;
             }
         }
 
         @media (max-height: 600px) and (orientation: landscape) {
             .hero {
-                height: auto;
-                min-height: calc(100vh - 70px);
-                padding: 40px 20px;
+                min-height: calc(100vh - 60px);
+                padding: 20px;
             }
             
             .work-hours {
                 margin: 10px auto;
                 max-width: 90%;
             }
+            
+            header {
+                height: 50px;
+                padding: 5px 0;
+            }
+            
+            body {
+                padding-top: 50px;
+            }
         }
 
+        /* ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ */
         @media (max-width: 480px) {
             .logo {
-                font-size: 1.5rem;
-            }
-            
-            .logo i {
-                font-size: 1.8rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
                 font-size: 1rem;
             }
             
+            .logo i {
+                font-size: 1.2rem;
+            }
+            
+            .logo-text {
+                font-size: 0.8rem;
+            }
+            
+            nav ul li a {
+                font-size: 0.65rem;
+                padding: 5px 3px;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+            }
+            
+            .work-hours-item-compact {
+                min-width: calc(50% - 8px);
+            }
+            
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.4rem;
             }
             
             .time-slots {
@@ -1508,34 +1767,43 @@
             }
             
             .btn-main {
-                padding: 12px 25px;
-                font-size: 1rem;
+                padding: 10px 20px;
+                font-size: 0.95rem;
             }
             
             .reason {
-                padding: 20px 15px;
+                padding: 18px 15px;
             }
             
             .work-hours {
-                padding: 10px 8px;
+                padding: 10px;
             }
             
             .work-hours h3 {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 360px) {
             .logo {
-                font-size: 1.3rem;
+                font-size: 0.9rem;
             }
             
             .logo i {
-                font-size: 1.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .logo-text {
+                font-size: 0.75rem;
+            }
+            
+            nav ul li a {
+                font-size: 0.6rem;
+                padding: 4px 2px;
             }
             
             .hero h1 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             
             .hero p {
@@ -1543,18 +1811,31 @@
             }
             
             .btn-main {
-                padding: 10px 20px;
+                padding: 8px 15px;
                 font-size: 0.9rem;
             }
             
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
             }
             
-            nav ul li a {
-                font-size: 0.85rem;
-                padding: 6px 4px;
+            .work-hours-item-compact {
+                min-width: 100%;
             }
+            
+            nav ul {
+                gap: 2px;
+            }
+        }
+
+        /* ПРЕДОТВРАЩЕНИЕ МАСШТАБИРОВАНИЯ НА iOS */
+        input, select, textarea {
+            font-size: 16px !important;
+        }
+        
+        /* УЛУЧШЕНИЕ КАСАНИЙ ДЛЯ МОБИЛЬНЫХ */
+        button, input[type="submit"], .time-slot, .admin-tab {
+            touch-action: manipulation;
         }
     </style>
 </head>
